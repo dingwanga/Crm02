@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>客户开发计划 - 查看</title>
+    <meta charset="UTF-8">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <script src="../script/common.js"></script>
+    <script src="../../js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function () {
+            var id = localStorage.getItem("id");
+            $.ajax({
+                url: "../../marketing/salPlan/" + id,
+                type: "get",
+                success: function (obj) {
+                    var chance = obj.result.chance;
+                    $("#id").html(chance.chc_id);
+                    $("#source").html(chance.chc_source);
+                    $("#cust_name").html(chance.chc_cust_name);
+                    $("#rate").html(chance.chc_rate);
+                    $("#title").html(chance.chc_title);
+                    $("#status").html(chance.chc_status_value);
+                    $("#linkman").html(chance.chc_linkman);
+                    $("#tel").html(chance.chc_tel);
+                    $("#desc").html(chance.chc_desc);
+                    $("#create_by").html(chance.chc_create_by);
+                    $("#create_date").html(formatDate(chance.chc_create_date));
+                    $("#due_to").html(chance.chc_due_to);
+                    $("#due_date").html(formatDate(chance.chc_due_date));
+                    $.each(obj.result.plans, function (i, plan) {
+                        var todo = plan.pla_todo;
+                        var result = plan.pla_result;
+                        if (todo == null) {
+                            todo = "";
+                        }
+                        if (result == null) {
+                            result = "";
+                        }
+                        var str = "<tr>" +
+                            "<td class='list_data_text'>" + formatDate(plan.pla_date, 1) + "</td>" +
+                            "<td class='list_data_ltext'>" + todo + "</td>" +
+                            "<td class='list_data_ltext'>" + result + "</td></tr>";
+                        $("#table1").append(str);
+                    })
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="page_title">客户开发计划&nbsp;&nbsp;&gt;&nbsp;&nbsp;查看</div>
+<div class="button_bar">
+    <button class="common_button" onclick="help('查看');">帮助</button>
+    <button class="common_button" onclick="back();">返回</button>
+</div>
+<table class="query_form_table">
+    <tr>
+        <th>编号</th>
+        <td id="id"></td>
+        <th>机会来源</th>
+        <td id="source"></td>
+    </tr>
+    <tr>
+        <th>客户名称</th>
+        <td id="cust_name"></td>
+        <th>成功机率（%）</th>
+        <td id="rate"></td>
+    </tr>
+    <tr>
+        <th>概要</th>
+        <td id="title"></td>
+        <th>状态</th>
+        <td style="color:red;" id="status"></td>
+    </tr>
+    <tr>
+        <th>联系人</th>
+        <td id="linkman"></td>
+        <th>联系人电话</th>
+        <td id="tel"></td>
+    </tr>
+    <tr>
+        <th>机会描述</th>
+        <td colspan="3" id="desc"></td>
+    </tr>
+    <tr>
+        <th>创建人</th>
+        <td id="create_by"></td>
+        <th>创建时间</th>
+        <td id="create_date"></td>
+    </tr>
+    <tr>
+        <th>指派给</th>
+        <td id="due_to"></td>
+        <th>指派时间</th>
+        <td id="due_date"></td>
+    </tr>
+</table>
+<br/>
+<table class="data_list_table" id="table1">
+    <tr>
+        <th>日期</th>
+        <th>计划</th>
+        <th>执行效果</th>
+    </tr>
+</table>
+</body>
+</html>

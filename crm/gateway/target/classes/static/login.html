@@ -1,0 +1,153 @@
+<html lang="en">
+<head>
+    <title>用户登陆</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        th {
+            font-size: 12px;
+            text-align: right;
+            font-weight: normal;
+        }
+
+        td {
+            font-size: 12px;
+            text-align: left;
+        }
+
+        input {
+            width: 100px;
+            font-size: 12px;
+            border: solid 1px lightblue;
+        }
+    </style>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                var username = $("#username").val();
+                var passowrd = $("#password").val();
+                var data = "{usr_name:\"" + username + "\",usr_password:\"" + passowrd + "\"}";
+                $.ajax({
+                    url: "/user/login",
+                    type: "post",
+                    data: data,
+                    dataType: "json",
+                    contentType: "application/json;charset=utf-8",
+                    success: function (obj) {
+                        if(obj.code==0){
+                            localStorage.setItem("token",obj.result.token);
+                            alert("登陆成功！");
+                            window.location.href="html/index2.html";
+                        }else{
+                            alert(obj.msg);
+                            $("#password").val("");
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body bgcolor=#FFFFFF leftmargin=0 topmargin=0 marginwidth=0 marginheight=0 style="text-align:center;padding-top:20px;">
+<table WIDTH=800 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+    <tr>
+        <td COLSPAN=7>
+            <img SRC="html/images/login/login_01.jpg" WIDTH=800 HEIGHT=71 ALT=""></td>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=1 HEIGHT=71 ALT=""></td>
+    </tr>
+    <tr>
+        <td COLSPAN=7>&nbsp;</td>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=1 HEIGHT=66 ALT=""></td>
+    </tr>
+    <tr>
+        <td COLSPAN=7>
+            <img SRC="html/images/login/login_03.jpg" WIDTH=800 HEIGHT=6 ALT=""></td>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=1 HEIGHT=6 ALT=""></td>
+    </tr>
+    <tr>
+        <td COLSPAN=3>&nbsp;</td>
+        <td COLSPAN=3 ROWSPAN=2>
+            <img SRC="html/images/login/login_05.jpg" WIDTH=426 HEIGHT=83 ALT=""></td>
+        <td ROWSPAN=3>&nbsp;</td>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=1 HEIGHT=44 ALT=""></td>
+    </tr>
+    <tr>
+        <td ROWSPAN=4>&nbsp;</td>
+        <td COLSPAN=2>
+            <img SRC="html/images/login/login_08.jpg" WIDTH=94 HEIGHT=39 ALT=""></td>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=1 HEIGHT=39 ALT=""></td>
+    </tr>
+    <tr>
+        <td ROWSPAN=3>
+            <img SRC="html/images/login/login_09.jpg" WIDTH=15 HEIGHT=141 ALT=""></td>
+        <td COLSPAN=2 ROWSPAN=2 background="html/images/login/login_10.jpg">
+            <table width="100%">
+                <tr>
+                    <th>用户名</th>
+                    <td><input type="text" id="username" size="10" maxlength="20"/></td>
+                </tr>
+                <tr>
+                    <th>密码</th>
+                    <td><input type="password" id="password" size="10" maxlength="20"/></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><img id="btn" src="html/images/login/login_button.jpg" width="73" height="25"></td>
+                </tr>
+            </table>
+        </td>
+        <td COLSPAN=2>
+            <img SRC="html/images/login/login_11.jpg" WIDTH=304 HEIGHT=86 ALT=""></td>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=1 HEIGHT=86 ALT=""></td>
+    </tr>
+    <tr>
+        <td ROWSPAN=2>
+            <img SRC="html/images/login/login_12.jpg" WIDTH=19 HEIGHT=55 ALT=""></td>
+        <td COLSPAN=2 ROWSPAN=3>&nbsp;</td>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=1 HEIGHT=28 ALT=""></td>
+    </tr>
+    <tr>
+        <td COLSPAN=2>
+            <img SRC="html/images/login/login_14.jpg" WIDTH=201 HEIGHT=27 ALT=""></td>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=1 HEIGHT=27 ALT=""></td>
+    </tr>
+    <tr>
+        <td COLSPAN=5>&nbsp;</td>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=1 HEIGHT=67 ALT=""></td>
+    </tr>
+    <tr>
+        <td COLSPAN=7 background="html/images/login/login_16.jpg" style="text-align:right;padding-right:25px;">
+            &copy; 2008 北京阿博泰克北大青鸟信息技术有限公司
+        </td>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=1 HEIGHT=55 ALT=""></td>
+    </tr>
+    <tr>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=150 HEIGHT=1 ALT=""></td>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=15 HEIGHT=1 ALT=""></td>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=79 HEIGHT=1 ALT=""></td>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=122 HEIGHT=1 ALT=""></td>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=19 HEIGHT=1 ALT=""></td>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=285 HEIGHT=1 ALT=""></td>
+        <td>
+            <img SRC="html/images/login/spacer.gif" WIDTH=130 HEIGHT=1 ALT=""></td>
+        <td></td>
+    </tr>
+</table>
+</body>
+</html>

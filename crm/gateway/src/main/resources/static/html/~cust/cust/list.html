@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>客户信息管理</title>
+    <meta charset="UTF-8">
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <script src="../../script/common.js"></script>
+    <script src="../../../js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function () {
+            // 地区下拉框
+            $.ajax({
+                url: "../../../base/regionList",
+                type: "get",
+                success: function (obj) {
+                    var str = "<option value='0'>全部</option>"
+                    $.each(obj.result, function (i, region) {
+                        str += "<option value='" + region.dict_value + "'>" + region.dict_item + "</option>";
+                    });
+                    $("#region").append(str);
+                }
+            });
+
+            // 客户等级下拉框
+            $.ajax({
+                url: "../../../base/levelList",
+                type: "get",
+                success: function (obj) {
+                    var str = "<option value='0'>全部</option>";
+                    $.each(obj.result, function (i, level) {
+                        str += "<option value='" + level.dict_value + "'>" + level.dict_item + "</option>";
+                    });
+                    $("#level").append(str);
+                }
+            });
+
+            // 填充表格数据
+            $.ajax({
+                url: "../../../cust/list",
+                type: "get",
+                success: function (obj) {
+                    if (obj.code === 0) {
+                        fillTable(obj.result);
+                    } else {
+                        alert("error");
+                    }
+                }
+            });
+
+
+        });
+
+        function go() {
+            var pageNo = $("#pageNo").val();
+            search(pageNo);
+        }
+
+        function search(pageNo) {
+            var pageSize = $("#pageSize").val();
+            var data = "pageNo=" + pageNo + "&pageSize=" + pageSize;
+            var no = $("#no").val();
+            if (no !== "") {
+                data += "&cust_no=" + no;
+            }
+            var name = $("#name").val();
+            if (name !== "") {
+                data += "&cust_name=" + name;
+            }
+            var region = $("#region").val();
+            if (region !== "") {
+                data += "&cust_region=" + region;
+            }
+            var manager_name = $("#manager_name").val();
+            if (manager_name !== "") {
+                data += "&cust_manager_name=" + manager_name;
+            }
+            var level = $("#level").val();
+            if (level !== "") {
+                data += "&cust_level=" + level;
+            }
+            $.ajax({
+                url: "../../../cust/list",
+                type: "get",
+                data: data,
+                success: function (obj) {
+                    if (obj.code === 0) {
+                        fillTable(obj.result);
+                    } else {
+                        alert("error");
+                    }
+                }
+            });
+        }
+
+        function fillTable(param) {
+            var table = $("#table");
+            table.empty();
+            var str = "<tr><th width='5%'>序号</th>" +
+                "<th width='15%'>客户编号</th>" +
+                "<th width='25%'>名称</th>" +
+                "<th width='10%'>地区</th>" +
+                "<th width='10%'>客户经理</th>" +
+                "<th width='15%'>客户等级</th>" +
+                "<th width='20%'>操作</th></tr>";
+            table.append(str);
+            $.each(param.list, function (i, cust) {
+                str = "<tr><td class='list_data_text'>" + cust.cust_id + "</td>" +
+                    "<td class='list_data_text'>" + cust.cust_no + "</td>" +
+                    "<td class='list_data_ltext'>" + cust.cust_name + "</td>" +
+                    "<td class='list_data_text'>" + cust.cust_region_name + "</td>" +
+                    "<td class='list_data_text'>" + cust.cust_manager_name + "</td>" +
+                    "<td class='list_data_text'>" + cust.cust_level_name + "</td>" +
+                    "<td class='list_data_op'>" +
+                    "<img onclick='toUrl(\"" + cust.cust_id + "\",\"edit.html\");' title='编辑' src='../../images/bt_edit.gif' class='op_button'/>&nbsp;&nbsp;&nbsp;&nbsp;" +
+                    "<img onclick='saveCustNo(\"" + cust.cust_no + "\",\"linkman.html\");' title='联系人' src='../../images/bt_linkman.gif' class='op_button'/>&nbsp;&nbsp;&nbsp;&nbsp;" +
+                    "<img onclick=\"saveCustNo('" + cust.cust_no + "','activities.html');\" title='交往记录' src='../../images/bt_acti.gif' class='op_button'/>&nbsp;&nbsp;&nbsp;&nbsp;" +
+                    "<img onclick=\"saveCustNo('" + cust.cust_no + "','orders.html');\" title='历史订单' src='../../images/bt_orders.gif' class='op_button'/>&nbsp;&nbsp;&nbsp;&nbsp;" +
+                    "<img onclick=\"delCust('" + cust.cust_no + "');\" title='删除' src='../../images/bt_del.gif' class='op_button'/></td></tr>";
+                table.append(str);
+            });
+            var pager = "<tr><th colspan='100' class='pager'>" +
+                "<div class='pager'>" +
+                "共" + param.count + "条记录&nbsp;&nbsp;" +
+                "每页<input type='number' id='pageSize' value='" + param.pageSize + "' style='width:40px''/>条&nbsp;&nbsp;" +
+                "第" + param.pageNo + "页/共" + param.pageCount + "页&nbsp;&nbsp;" +
+                "<a href='javascript:search(1)'>第一页</a>&nbsp;" +
+                "<a href='javascript:search(" + (param.pageNo - 1) + ")'>上一页</a>&nbsp;&nbsp;" +
+                "<a href='javascript:search(" + (param.pageNo + 1) + ")'>下一页</a>&nbsp;&nbsp;" +
+                "<a href='javascript:search(" + param.pageCount + ")'>最后一页</a>&nbsp;&nbsp;" +
+                "转到<input type='number' min='1' id='pageNo' value='" + param.pageNo + "' style='width:50px'/>页" +
+                "<button onclick='go();'>GO</button>" +
+                "</div></th></tr>";
+            table.append(pager);
+        }
+
+        function saveCustNo(cust_no, url) {
+            localStorage.setItem("cust_no", cust_no);
+            to(url);
+        }
+
+        function delCust(no) {
+            var flag = confirm("确定要删除该客户吗？");
+            if (flag) {
+                $.ajax({
+                    url: "../../../cust/customer/" + no,
+                    type: "delete",
+                    success: function (obj) {
+                        if (obj.code === 0) {
+                            alert("删除成功！");
+                            reload(true);
+                        } else {
+                            alert(obj.msg);
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="page_title">客户信息管理</div>
+<div class="button_bar">
+    <button class="common_button" onclick="help('客户信息管理');">帮助</button>
+    <button class="common_button" onclick="search(1);">查询</button>
+</div>
+<table class="query_form_table">
+    <tr>
+        <th>客户编号</th>
+        <td><input type="text" id="no"/></td>
+        <th>名称</th>
+        <td><input type="text" id="name"/></td>
+        <th>地区</th>
+        <td>
+            <select id="region">
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>客户经理</th>
+        <td><input type="text" id="manager_name"/></td>
+        <th>客户等级</th>
+        <td>
+            <select id="level">
+            </select>
+        </td>
+        <th></th>
+        <td></td>
+    </tr>
+</table>
+<br/>
+<table class="data_list_table" id="table">
+</table>
+</body>
+</html>

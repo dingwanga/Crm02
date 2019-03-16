@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bdqn.crm.mapper.OrdersLineMapper">
+
+    <select id="getOrdersLineById" resultType="cn.bdqn.crm.pojo.OrdersLine">
+        select
+                odd_id as oddId,
+                odd_order_id as oddOrderId,
+                odd_prod_id as oddProdId,
+                odd_count as oddCount,
+                odd_unit as oddUnit,
+                odd_price as oddPrice
+        from orders_line
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="id != null">
+                and odd_id=#{oddId}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getOrdersLineListByMap" resultType="cn.bdqn.crm.pojo.OrdersLine" parameterType="java.util.Map">
+        select
+                odd_id as oddId,
+                odd_order_id as oddOrderId,
+                odd_prod_id as oddProdId,
+                odd_count as oddCount,
+                odd_unit as oddUnit,
+                odd_price as oddPrice
+        from orders_line
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="oddId != null and oddId!=''">
+                    and odd_id=#{oddId}
+                </if>
+                <if test="oddOrderId != null and oddOrderId!=''">
+                    and odd_order_id=#{oddOrderId}
+                </if>
+                <if test="oddProdId != null and oddProdId!=''">
+                    and odd_prod_id=#{oddProdId}
+                </if>
+                <if test="oddCount != null and oddCount!=''">
+                    and odd_count=#{oddCount}
+                </if>
+                <if test="oddUnit != null and oddUnit!=''">
+                    and odd_unit=#{oddUnit}
+                </if>
+                <if test="oddPrice != null and oddPrice!=''">
+                    and odd_price=#{oddPrice}
+                </if>
+        </trim>
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getOrdersLineCountByMap" resultType="Integer"  parameterType="java.util.Map">
+        select count(*) from orders_line
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="oddId != null and oddId!=''">
+                    and odd_id=#{oddId}
+                </if>
+                <if test="oddOrderId != null and oddOrderId!=''">
+                    and odd_order_id=#{oddOrderId}
+                </if>
+                <if test="oddProdId != null and oddProdId!=''">
+                    and odd_prod_id=#{oddProdId}
+                </if>
+                <if test="oddCount != null and oddCount!=''">
+                    and odd_count=#{oddCount}
+                </if>
+                <if test="oddUnit != null and oddUnit!=''">
+                    and odd_unit=#{oddUnit}
+                </if>
+                <if test="oddPrice != null and oddPrice!=''">
+                    and odd_price=#{oddPrice}
+                </if>
+        </trim>
+    </select>
+
+    <insert id="insertOrdersLine" parameterType="cn.bdqn.crm.pojo.OrdersLine">
+        insert into orders_line(
+                        odd_id,
+                        odd_order_id,
+                        odd_prod_id,
+                        odd_count,
+                        odd_unit,
+                        odd_price)
+        values(
+                     #{oddId},
+                     #{oddOrderId},
+                     #{oddProdId},
+                     #{oddCount},
+                     #{oddUnit},
+                    #{oddPrice})
+    </insert>
+
+    <update id="updateOrdersLine" parameterType="cn.bdqn.crm.pojo.OrdersLine">
+        update orders_line
+        <trim prefix="set" suffixOverrides="," suffix="where oddId=#{oddId}">
+                        <if test="oddId != null and oddId!=''">
+                            odd_id=#{oddId},
+                        </if>
+                        <if test="oddOrderId != null and oddOrderId!=''">
+                            odd_order_id=#{oddOrderId},
+                        </if>
+                        <if test="oddProdId != null and oddProdId!=''">
+                            odd_prod_id=#{oddProdId},
+                        </if>
+                        <if test="oddCount != null and oddCount!=''">
+                            odd_count=#{oddCount},
+                        </if>
+                        <if test="oddUnit != null and oddUnit!=''">
+                            odd_unit=#{oddUnit},
+                        </if>
+                        <if test="oddPrice != null and oddPrice!=''">
+                            odd_price=#{oddPrice}
+                        </if>
+        </trim>
+    </update>
+
+    <delete id="delOrdersLine" parameterType="int">
+        DELETE FROM orders_line WHERE odd_Id=#{oddId}
+    </delete>
+
+</mapper>

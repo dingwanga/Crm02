@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>查询库存</title>
+    <meta charset="UTF-8">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <script src="../script/common.js"></script>
+    <script src="../../js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                url: "../../base/storages",
+                type: "get",
+                success: function (obj) {
+                    if (obj.code === 0) {
+                        fillTable(obj.result);
+                    } else {
+                        alert("error!");
+                    }
+                }
+            });
+        });
+
+        function fillTable(param) {
+            var table = $("#table");
+            table.empty();
+            var str = '<tr><th width="5%">序号</th>' +
+                '<th width="30%">产品</th>' +
+                '<th width="20%">仓库</th>' +
+                '<th width="15%">货位</th>' +
+                '<th width="15%">件数</th>' +
+                '<th width="15%">备注</th></tr>';
+            $.each(param.list, function (i, storage) {
+                var memo = storage.stk_memo;
+                if (memo == null) {
+                    memo = '';
+                }
+                str += '<tr><td class="list_data_number">' + storage.stk_id + '</td>' +
+                    '<td class="list_data_ltext">' + storage.stk_prod_name + '</td>' +
+                    '<td class="list_data_ltext">' + storage.stk_warehouse + '</td>' +
+                    '<td class="list_data_text">' + storage.stk_ware + '</td>' +
+                    '<td class="list_data_number">' + storage.stk_count + '</td>' +
+                    '<td class="list_data_ltext">' + memo + '</td></tr>';
+            });
+            str += "<tr><th colspan='100' class='pager'>" +
+                "<div class='pager'>" +
+                "共" + param.count + "条记录&nbsp;&nbsp;" +
+                "每页<input type='number' id='pageSize' value='" + param.pageSize + "' style='width:40px''/>条&nbsp;&nbsp;" +
+                "第" + param.pageNo + "页/共" + param.pageCount + "页&nbsp;&nbsp;" +
+                "<a href='javascript:search(1)'>第一页</a>&nbsp;" +
+                "<a href='javascript:search(" + (param.pageNo - 1) + ")'>上一页</a>&nbsp;&nbsp;" +
+                "<a href='javascript:search(" + (param.pageNo + 1) + ")'>下一页</a>&nbsp;&nbsp;" +
+                "<a href='javascript:search(" + param.pageCount + ")'>最后一页</a>&nbsp;&nbsp;" +
+                "转到<input type='number' min='1' id='pageNo' value='" + param.pageNo + "' style='width:50px'/>页" +
+                "<button onclick='go();'>GO</button>" +
+                "</div></th></tr>";
+            table.append(str);
+        }
+
+        function go() {
+            var pageNo = $("#pageNo").val();
+            search(pageNo);
+        }
+
+        function search(pageNo) {
+            var pageSize = $("#pageSize").val();
+            var data = "pageNo=" + pageNo + "&pageSize=" + pageSize;
+            var prod_name = $("#prod_name").val();
+            if (prod_name !== "") {
+                data += "&stk_prod_name=" + prod_name;
+            }
+            var warehouse = $("#warehouse").val();
+            if (warehouse !== "") {
+                data += "&stk_warehouse=" + warehouse;
+            }
+            $.ajax({
+                url: "../../base/storages",
+                type: "get",
+                data: data,
+                success: function (obj) {
+                    if (obj.code === 0) {
+                        fillTable(obj.result);
+                    } else {
+                        alert("error");
+                    }
+                }
+            });
+        }
+
+    </script>
+</head>
+<body>
+<div class="page_title">查询库存</div>
+<div class="button_bar">
+    <button class="common_button" onclick="help('查询库存');">帮助</button>
+    <button class="common_button" onclick="search(1);">查询</button>
+</div>
+<table class="query_form_table">
+    <tr>
+        <th>产品</th>
+        <td><input type="text" id="prod_name"/></td>
+        <th>仓库</th>
+        <td><input type="text" id="warehouse"/></td>
+        <th></th>
+        <td></td>
+    </tr>
+</table>
+<br/>
+<table class="data_list_table" id="table">
+</table>
+</body>
+</html>

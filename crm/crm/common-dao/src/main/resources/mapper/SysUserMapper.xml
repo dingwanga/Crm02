@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bdqn.crm.mapper.SysUserMapper">
+
+    <select id="getSysUserById" resultType="cn.bdqn.crm.pojo.SysUser">
+        select
+                user_id as userId,
+                user_name as userName,
+                user_password as userPassword,
+                user_role_id as userRoleId,
+                user_flag as userFlag
+        from sys_user
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="userId != null">
+                and user_id=#{userId}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getSysUserListByMap" resultType="cn.bdqn.crm.pojo.SysUser" parameterType="java.util.Map">
+        select
+                user_id as userId,
+                user_name as userName,
+                user_password as userPassword,
+                user_role_id as userRoleId,
+                user_flag as userFlag
+        from sys_user
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="userId != null and userId!=''">
+                    and user_id=#{userId}
+                </if>
+                <if test="userName != null and userName!=''">
+                    and user_name=#{userName}
+                </if>
+                <if test="userPassword != null and userPassword!=''">
+                    and user_password=#{userPassword}
+                </if>
+                <if test="userRoleId != null and userRoleId!=''">
+                    and user_role_id=#{userRoleId}
+                </if>
+                <if test="userFlag != null and userFlag!=''">
+                    and user_flag=#{userFlag}
+                </if>
+        </trim>
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getSysUserCountByMap" resultType="Integer"  parameterType="java.util.Map">
+        select count(*) from sys_user
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="userId != null and userId!=''">
+                    and user_id=#{userId}
+                </if>
+                <if test="userName != null and userName!=''">
+                    and user_name=#{userName}
+                </if>
+                <if test="userPassword != null and userPassword!=''">
+                    and user_password=#{userPassword}
+                </if>
+                <if test="userRoleId != null and userRoleId!=''">
+                    and user_role_id=#{userRoleId}
+                </if>
+                <if test="userFlag != null and userFlag!=''">
+                    and user_flag=#{userFlag}
+                </if>
+        </trim>
+    </select>
+
+    <insert id="insertSysUser" parameterType="cn.bdqn.crm.pojo.SysUser">
+        insert into sys_user(
+                        user_id,
+                        user_name,
+                        user_password,
+                        user_role_id,
+                        user_flag)
+        values(
+                     #{userId},
+                     #{userName},
+                     #{userPassword},
+                     #{userRoleId},
+                    #{userFlag})
+    </insert>
+
+    <update id="updateSysUser" parameterType="cn.bdqn.crm.pojo.SysUser">
+        update sys_user
+        <trim prefix="set" suffixOverrides="," suffix="where userId=#{userId}">
+                        <if test="userId != null and userId!=''">
+                            user_id=#{userId},
+                        </if>
+                        <if test="userName != null and userName!=''">
+                            user_name=#{userName},
+                        </if>
+                        <if test="userPassword != null and userPassword!=''">
+                            user_password=#{userPassword},
+                        </if>
+                        <if test="userRoleId != null and userRoleId!=''">
+                            user_role_id=#{userRoleId},
+                        </if>
+                        <if test="userFlag != null and userFlag!=''">
+                            user_flag=#{userFlag}
+                        </if>
+        </trim>
+    </update>
+
+    <delete id="delSysUser" parameterType="int">
+        DELETE FROM sys_user WHERE user_Id=#{userId}
+    </delete>
+
+</mapper>

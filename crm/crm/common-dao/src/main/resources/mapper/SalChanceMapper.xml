@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bdqn.crm.mapper.SalChanceMapper">
+
+    <select id="getSalChanceById" resultType="cn.bdqn.crm.pojo.SalChance">
+        select
+                chc_id as chcId,
+                chc_source as chcSource,
+                chc_cust_name as chcCustName,
+                chc_title as chcTitle,
+                chc_rate as chcRate,
+                chc_linkman as chcLinkman,
+                chc_tel as chcTel,
+                chc_desc as chcDesc,
+                chc_create_id as chcCreateId,
+                chc_create_by as chcCreateBy,
+                chc_create_date as chcCreateDate,
+                chc_due_id as chcDueId,
+                chc_due_to as chcDueTo,
+                chc_due_date as chcDueDate
+        from sal_chance
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="chcId != null">
+                and chc_id=#{chcId}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getSalChanceListByMap" resultType="cn.bdqn.crm.pojo.SalChance" parameterType="java.util.Map">
+        select
+                chc_id as chcId,
+                chc_source as chcSource,
+                chc_cust_name as chcCustName,
+                chc_title as chcTitle,
+                chc_rate as chcRate,
+                chc_linkman as chcLinkman,
+                chc_tel as chcTel,
+                chc_desc as chcDesc,
+                chc_create_id as chcCreateId,
+                chc_create_by as chcCreateBy,
+                chc_create_date as chcCreateDate,
+                chc_due_id as chcDueId,
+                chc_due_to as chcDueTo,
+                chc_due_date as chcDueDate
+        from sal_chance
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="chcId != null and chcId!=''">
+                    and chc_id=#{chcId}
+                </if>
+                <if test="chcSource != null and chcSource!=''">
+                    and chc_source=#{chcSource}
+                </if>
+                <if test="chcCustName != null and chcCustName!=''">
+                    and chc_cust_name=#{chcCustName}
+                </if>
+                <if test="chcTitle != null and chcTitle!=''">
+                    and chc_title=#{chcTitle}
+                </if>
+                <if test="chcRate != null and chcRate!=''">
+                    and chc_rate=#{chcRate}
+                </if>
+                <if test="chcLinkman != null and chcLinkman!=''">
+                    and chc_linkman=#{chcLinkman}
+                </if>
+                <if test="chcTel != null and chcTel!=''">
+                    and chc_tel=#{chcTel}
+                </if>
+                <if test="chcDesc != null and chcDesc!=''">
+                    and chc_desc=#{chcDesc}
+                </if>
+                <if test="chcCreateId != null and chcCreateId!=''">
+                    and chc_create_id=#{chcCreateId}
+                </if>
+                <if test="chcCreateBy != null and chcCreateBy!=''">
+                    and chc_create_by=#{chcCreateBy}
+                </if>
+                <if test="chcCreateDate != null and chcCreateDate!=''">
+                    and chc_create_date=#{chcCreateDate}
+                </if>
+                <if test="chcDueId != null and chcDueId!=''">
+                    and chc_due_id=#{chcDueId}
+                </if>
+                <if test="chcDueTo != null and chcDueTo!=''">
+                    and chc_due_to=#{chcDueTo}
+                </if>
+                <if test="chcDueDate != null and chcDueDate!=''">
+                    and chc_due_date=#{chcDueDate}
+                </if>
+        </trim>
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getSalChanceCountByMap" resultType="Integer"  parameterType="java.util.Map">
+        select count(*) from sal_chance
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="chcId != null and chcId!=''">
+                    and chc_id=#{chcId}
+                </if>
+                <if test="chcSource != null and chcSource!=''">
+                    and chc_source=#{chcSource}
+                </if>
+                <if test="chcCustName != null and chcCustName!=''">
+                    and chc_cust_name=#{chcCustName}
+                </if>
+                <if test="chcTitle != null and chcTitle!=''">
+                    and chc_title=#{chcTitle}
+                </if>
+                <if test="chcRate != null and chcRate!=''">
+                    and chc_rate=#{chcRate}
+                </if>
+                <if test="chcLinkman != null and chcLinkman!=''">
+                    and chc_linkman=#{chcLinkman}
+                </if>
+                <if test="chcTel != null and chcTel!=''">
+                    and chc_tel=#{chcTel}
+                </if>
+                <if test="chcDesc != null and chcDesc!=''">
+                    and chc_desc=#{chcDesc}
+                </if>
+                <if test="chcCreateId != null and chcCreateId!=''">
+                    and chc_create_id=#{chcCreateId}
+                </if>
+                <if test="chcCreateBy != null and chcCreateBy!=''">
+                    and chc_create_by=#{chcCreateBy}
+                </if>
+                <if test="chcCreateDate != null and chcCreateDate!=''">
+                    and chc_create_date=#{chcCreateDate}
+                </if>
+                <if test="chcDueId != null and chcDueId!=''">
+                    and chc_due_id=#{chcDueId}
+                </if>
+                <if test="chcDueTo != null and chcDueTo!=''">
+                    and chc_due_to=#{chcDueTo}
+                </if>
+                <if test="chcDueDate != null and chcDueDate!=''">
+                    and chc_due_date=#{chcDueDate}
+                </if>
+        </trim>
+    </select>
+
+    <insert id="insertSalChance" parameterType="cn.bdqn.crm.pojo.SalChance">
+        insert into sal_chance(
+                        chc_id,
+                        chc_source,
+                        chc_cust_name,
+                        chc_title,
+                        chc_rate,
+                        chc_linkman,
+                        chc_tel,
+                        chc_desc,
+                        chc_create_id,
+                        chc_create_by,
+                        chc_create_date,
+                        chc_due_id,
+                        chc_due_to,
+                        chc_due_date)
+        values(
+                     #{chcId},
+                     #{chcSource},
+                     #{chcCustName},
+                     #{chcTitle},
+                     #{chcRate},
+                     #{chcLinkman},
+                     #{chcTel},
+                     #{chcDesc},
+                     #{chcCreateId},
+                     #{chcCreateBy},
+                     #{chcCreateDate},
+                     #{chcDueId},
+                     #{chcDueTo},
+                    #{chcDueDate})
+    </insert>
+
+    <update id="updateSalChance" parameterType="cn.bdqn.crm.pojo.SalChance">
+        update sal_chance
+        <trim prefix="set" suffixOverrides="," suffix="where chcId=#{chcId}">
+                        <if test="chcId != null and chcId!=''">
+                            chc_id=#{chcId},
+                        </if>
+                        <if test="chcSource != null and chcSource!=''">
+                            chc_source=#{chcSource},
+                        </if>
+                        <if test="chcCustName != null and chcCustName!=''">
+                            chc_cust_name=#{chcCustName},
+                        </if>
+                        <if test="chcTitle != null and chcTitle!=''">
+                            chc_title=#{chcTitle},
+                        </if>
+                        <if test="chcRate != null and chcRate!=''">
+                            chc_rate=#{chcRate},
+                        </if>
+                        <if test="chcLinkman != null and chcLinkman!=''">
+                            chc_linkman=#{chcLinkman},
+                        </if>
+                        <if test="chcTel != null and chcTel!=''">
+                            chc_tel=#{chcTel},
+                        </if>
+                        <if test="chcDesc != null and chcDesc!=''">
+                            chc_desc=#{chcDesc},
+                        </if>
+                        <if test="chcCreateId != null and chcCreateId!=''">
+                            chc_create_id=#{chcCreateId},
+                        </if>
+                        <if test="chcCreateBy != null and chcCreateBy!=''">
+                            chc_create_by=#{chcCreateBy},
+                        </if>
+                        <if test="chcCreateDate != null and chcCreateDate!=''">
+                            chc_create_date=#{chcCreateDate},
+                        </if>
+                        <if test="chcDueId != null and chcDueId!=''">
+                            chc_due_id=#{chcDueId},
+                        </if>
+                        <if test="chcDueTo != null and chcDueTo!=''">
+                            chc_due_to=#{chcDueTo},
+                        </if>
+                        <if test="chcDueDate != null and chcDueDate!=''">
+                            chc_due_date=#{chcDueDate}
+                        </if>
+        </trim>
+    </update>
+
+    <delete id="delSalChance" parameterType="int">
+        DELETE FROM sal_chance WHERE chc_Id=#{chcId}
+    </delete>
+
+</mapper>

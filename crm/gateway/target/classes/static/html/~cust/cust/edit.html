@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>客户信息管理 - 编辑客户信息</title>
+    <meta charset="UTF-8">
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <script src="../../script/common.js"></script>
+    <script src="../../../js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function () {
+            // 地区下拉框
+            $.ajax({
+                url: "../../../base/regionList",
+                type: "get",
+                success: function (obj) {
+                    var str = "<option value='0'>请选择</option>"
+                    $.each(obj.result, function (i, region) {
+                        str += "<option value='" + region.dict_value + "'>" + region.dict_item + "</option>";
+                    });
+                    $("#region").append(str);
+                }
+            });
+
+            // 客户等级下拉框
+            $.ajax({
+                url: "../../../base/levelList",
+                type: "get",
+                success: function (obj) {
+                    var str = "<option value='0'>请选择</option>";
+                    $.each(obj.result, function (i, level) {
+                        str += "<option value='" + level.dict_value + "'>" + level.dict_item + "</option>";
+                    });
+                    $("#level").append(str);
+                }
+            });
+
+            // 客户经理下拉框
+            $.ajax({
+                url: "../../../user/accountManagers",
+                type: "get",
+                success: function (obj) {
+                    var str = "<option value='0'>请选择</option>";
+                    $.each(obj.result, function (i, manager) {
+                        str += "<option value='" + manager.usr_id + "'>" + manager.usr_name + "</option>";
+                    });
+                    $("#manager").append(str);
+                }
+            });
+
+            // 表格填充数据
+            var id = localStorage.getItem("id");
+            $.ajax({
+                url: "../../../cust/customer/" + id,
+                type: "get",
+                success: function (obj) {
+                    if (obj.code === 0) {
+                        localStorage.setItem("cust_no", obj.result.cust_no);
+                        $("#no").html(obj.result.cust_no);
+                        $("#name").val(obj.result.cust_name);
+                        $("#addr").val(obj.result.cust_addr);
+                        $("#zip").val(obj.result.cust_zip);
+                        $("#tel").val(obj.result.cust_tel);
+                        $("#fax").val(obj.result.cust_fax);
+                        $("#web").val(obj.result.cust_web);
+                        $("#licence").val(obj.result.cust_licence);
+                        $("#chieftain").val(obj.result.cust_chieftain);
+                        $("#bankroll").val(obj.result.cust_bankroll);
+                        $("#turnover").val(obj.result.cust_turnover);
+                        $("#bank").val(obj.result.cust_bank);
+                        $("#account").val(obj.result.cust_account);
+                        $("#local_tax").val(obj.result.cust_local_tax);
+                        $("#national_tax").val(obj.result.cust_national_tax);
+                        $("#satisfy").val(obj.result.cust_satisfy);
+                        $("#credit").val(obj.result.cust_credit);
+                        $("#region").val(obj.result.cust_region);
+                        $("#level").val(obj.result.cust_level);
+                        $("#manager").val(obj.result.cust_manager_id);
+                    } else {
+                        alert(obj.msg);
+                    }
+                }
+            });
+
+        });
+
+        // 获取提交数据并验证
+        function getData() {
+            var no = $("#no").html();
+            var name = $("#name").val();
+            if (name == '') {
+                alert("请输入名称！");
+                return false;
+            }
+            var region = $("#region").val();
+            if (region == 0) {
+                alert("请选择地区！");
+                return false;
+            }
+            var manager_id = $("#manager").val();
+            if (manager_id == 0) {
+                alert("请选择客户经理！");
+                return false;
+            }
+            var level = $("#level").val();
+            if (level == 0) {
+                alert("请选择客户等级！");
+                return false;
+            }
+            var satisfy = $("#satisfy").val();
+            if (satisfy == 0) {
+                alert("请选择客户满意度！");
+                return false;
+            }
+            var credit = $("#credit").val();
+            if (credit == 0) {
+                alert("请选择客户信用度！");
+                return false;
+            }
+            var addr = $("#addr").val();
+            var zip = $("#zip").val();
+            var tel = $("#tel").val();
+            var fax = $("#fax").val();
+            var web = $("#web").val();
+            var licence = $("#licence").val();
+            var chieftain = $("#chieftain").val();
+            var bankroll = $("#bankroll").val();
+            if (bankroll == '') {
+                bankroll = 0;
+            }
+            var turnover = $("#turnover").val();
+            if (turnover == '') {
+                turnover = 0;
+            }
+            var bank = $("#bank").val();
+            var account = $("#account").val();
+            var local_tax = $("#local_tax").val();
+            var national_tax = $("#national_tax").val();
+            return '{cust_no:"' + no + '",cust_name:"' + name + '",cust_region:"' + region +
+                '",cust_manager_id:"' + manager_id + '",' + 'cust_level:"' + level + '",cust_satisfy:"'
+                + satisfy + '",cust_credit:"' + credit + '",cust_addr:"' + addr + '",cust_zip:"' + zip +
+                '",cust_tel:"' + tel + '",cust_fax:"' + fax + '",cust_web:"' + web + '",cust_licence:"'
+                + licence + '",cust_chieftain:"' + chieftain + '",cust_bankroll:"' + bankroll + '",cust_turnover:"'
+                + turnover + '",cust_bank:"' + bank + '",cust_account:"' + account + '",cust_local_tax:"'
+                + local_tax + '",cust_national_tax:"' + national_tax + '"}';
+        }
+
+        // 提交数据
+        function submit() {
+            var data = getData();
+            if (data !== false) {
+                $.ajax({
+                    url: "../../../cust/customer",
+                    type: "put",
+                    data: data,
+                    dataType: "json",
+                    contentType: "application/json;charset=utf-8",
+                    success: function (obj) {
+                        if (obj.code === 0) {
+                            alert("保存成功！");
+                            to('list.html');
+                        } else {
+                            alert(obj.msg);
+                        }
+                    }
+                });
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div class="page_title">客户信息管理&nbsp;&nbsp;&gt;&nbsp;&nbsp;编辑客户信息</div>
+<div class="button_bar">
+    <button class="common_button" onclick="help('编辑客户信息');">帮助</button>
+    <button class="common_button" onclick="to('linkman.html');">联系人</button>
+    <button class="common_button" onclick="to('activities.html');">交往记录</button>
+    <button class="common_button" onclick="to('orders.html');">历史订单</button>
+    <button class="common_button" onclick="back();">返回</button>
+    <button class="common_button" onclick="submit();">保存</button>
+</div>
+<table class="query_form_table">
+    <tr>
+        <th>客户编号</th>
+        <td id="no"></td>
+        <th>名称</th>
+        <td><input type="text" id="name"/>
+            <span class="red_star">*</span></td>
+    </tr>
+    <tr>
+        <th>地区</th>
+        <td>
+            <select id="region">
+            </select>
+            <span class="red_star">*</span></td>
+        <th>客户经理</th>
+        <td>
+            <select id="manager">
+            </select><span class="red_star">*</span>
+        </td>
+    </tr>
+    <tr>
+        <th>客户等级</th>
+        <td>
+            <select id="level">
+            </select><span class="red_star">*</span>
+        </td>
+        <th></th>
+        <td></td>
+    </tr>
+    <tr>
+        <th>客户满意度</th>
+        <td>
+            <select id="satisfy">
+                <option value="0">未指定</option>
+                <option value="5">☆☆☆☆☆</option>
+                <option value="4">☆☆☆☆</option>
+                <option value="3">☆☆☆</option>
+                <option value="2">☆☆</option>
+                <option value="1">☆</option>
+            </select><span class="red_star">*</span>
+        </td>
+        <th>客户信用度</th>
+        <td>
+            <select id="credit">
+                <option value="0">未指定</option>
+                <option value="5">☆☆☆☆☆</option>
+                <option value="4">☆☆☆☆</option>
+                <option value="3">☆☆☆</option>
+                <option value="2">☆☆</option>
+                <option value="1">☆</option>
+            </select><span class="red_star">*</span>
+        </td>
+    </tr>
+</table>
+<br/>
+<table class="query_form_table" id="table1">
+    <tr>
+        <th>地址</th>
+        <td><input type="text" id="addr"/><span class="red_star">*</span>
+        </td>
+        <th>邮政编码</th>
+        <td><input type="text" id="zip"/><span class="red_star">*</span></td>
+    </tr>
+    <tr>
+        <th>电话</th>
+        <td>
+            <input type="text" id="tel"/><span class="red_star">*</span></td>
+        <th>传真</th>
+        <td>
+            <input type="text" id="fax"/><span class="red_star">*</span>
+        </td>
+    </tr>
+    <tr>
+        <th>网址</th>
+        <td>
+            <input type="text" id="web"/><span class="red_star">*</span>
+        </td>
+        <th></th>
+        <td></td>
+    </tr>
+</table>
+<br/>
+<table class="query_form_table" id="table2">
+    <tr>
+        <th>营业执照注册号</th>
+        <td><input type="text" id="licence"/></td>
+        <th>法人</th>
+        <td><input type="text" id="chieftain"/><span class="red_star">*</span>
+        </td>
+    </tr>
+    <tr>
+        <th>注册资金（万元）</th>
+        <td>
+            <input type="number" id="bankroll"/></td>
+        <th>年营业额</th>
+        <td>
+            <input type="number" id="turnover"/>
+        </td>
+    </tr>
+    <tr>
+        <th>开户银行</th>
+        <td>
+            <input type="text" id="bank"/><span class="red_star">*</span>
+        </td>
+        <th>银行帐号</th>
+        <td><input type="text" id="account"/><span class="red_star">*</span></td>
+    </tr>
+    <tr>
+        <th>地税登记号</th>
+        <td><input type="text" id="local_tax"/></td>
+        <th>国税登记号</th>
+        <td><input type="text" id="national_tax"/></td>
+    </tr>
+</table>
+</body>
+</html>

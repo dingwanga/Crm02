@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bdqn.crm.mapper.CstLinkmanMapper">
+
+    <select id="getCstLinkmanById" resultType="cn.bdqn.crm.pojo.CstLinkman">
+        select
+                lkm_id as lkmId,
+                lkm_cust_no as lkmCustNo,
+                lkm_cust_name as lkmCustName,
+                lkm_name as lkmName,
+                lkm_sex as lkmSex,
+                lkm_postion as lkmPostion,
+                lkm_tel as lkmTel,
+                lkm_mobile as lkmMobile,
+                lkm_memo as lkmMemo
+        from cst_linkman
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="lkmId != null">
+                and lkm_id=#{lkmId}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getCstLinkmanListByMap" resultType="cn.bdqn.crm.pojo.CstLinkman" parameterType="java.util.Map">
+        select
+                lkm_id as lkmId,
+                lkm_cust_no as lkmCustNo,
+                lkm_cust_name as lkmCustName,
+                lkm_name as lkmName,
+                lkm_sex as lkmSex,
+                lkm_postion as lkmPostion,
+                lkm_tel as lkmTel,
+                lkm_mobile as lkmMobile,
+                lkm_memo as lkmMemo
+        from cst_linkman
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="lkmId != null and lkmId!=''">
+                    and lkm_id=#{lkmId}
+                </if>
+                <if test="lkmCustNo != null and lkmCustNo!=''">
+                    and lkm_cust_no=#{lkmCustNo}
+                </if>
+                <if test="lkmCustName != null and lkmCustName!=''">
+                    and lkm_cust_name=#{lkmCustName}
+                </if>
+                <if test="lkmName != null and lkmName!=''">
+                    and lkm_name=#{lkmName}
+                </if>
+                <if test="lkmSex != null and lkmSex!=''">
+                    and lkm_sex=#{lkmSex}
+                </if>
+                <if test="lkmPostion != null and lkmPostion!=''">
+                    and lkm_postion=#{lkmPostion}
+                </if>
+                <if test="lkmTel != null and lkmTel!=''">
+                    and lkm_tel=#{lkmTel}
+                </if>
+                <if test="lkmMobile != null and lkmMobile!=''">
+                    and lkm_mobile=#{lkmMobile}
+                </if>
+                <if test="lkmMemo != null and lkmMemo!=''">
+                    and lkm_memo=#{lkmMemo}
+                </if>
+        </trim>
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getCstLinkmanCountByMap" resultType="Integer"  parameterType="java.util.Map">
+        select count(*) from cst_linkman
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="lkmId != null and lkmId!=''">
+                    and lkm_id=#{lkmId}
+                </if>
+                <if test="lkmCustNo != null and lkmCustNo!=''">
+                    and lkm_cust_no=#{lkmCustNo}
+                </if>
+                <if test="lkmCustName != null and lkmCustName!=''">
+                    and lkm_cust_name=#{lkmCustName}
+                </if>
+                <if test="lkmName != null and lkmName!=''">
+                    and lkm_name=#{lkmName}
+                </if>
+                <if test="lkmSex != null and lkmSex!=''">
+                    and lkm_sex=#{lkmSex}
+                </if>
+                <if test="lkmPostion != null and lkmPostion!=''">
+                    and lkm_postion=#{lkmPostion}
+                </if>
+                <if test="lkmTel != null and lkmTel!=''">
+                    and lkm_tel=#{lkmTel}
+                </if>
+                <if test="lkmMobile != null and lkmMobile!=''">
+                    and lkm_mobile=#{lkmMobile}
+                </if>
+                <if test="lkmMemo != null and lkmMemo!=''">
+                    and lkm_memo=#{lkmMemo}
+                </if>
+        </trim>
+    </select>
+
+    <insert id="insertCstLinkman" parameterType="cn.bdqn.crm.pojo.CstLinkman">
+        insert into cst_linkman(
+                        lkm_id,
+                        lkm_cust_no,
+                        lkm_cust_name,
+                        lkm_name,
+                        lkm_sex,
+                        lkm_postion,
+                        lkm_tel,
+                        lkm_mobile,
+                        lkm_memo)
+        values(
+                     #{lkmId},
+                     #{lkmCustNo},
+                     #{lkmCustName},
+                     #{lkmName},
+                     #{lkmSex},
+                     #{lkmPostion},
+                     #{lkmTel},
+                     #{lkmMobile},
+                    #{lkmMemo})
+    </insert>
+
+    <update id="updateCstLinkman" parameterType="cn.bdqn.crm.pojo.CstLinkman">
+        update cst_linkman
+        <trim prefix="set" suffixOverrides="," suffix="where lkmId=#{lkmId}">
+                        <if test="lkmId != null and lkmId!=''">
+                            lkm_id=#{lkmId},
+                        </if>
+                        <if test="lkmCustNo != null and lkmCustNo!=''">
+                            lkm_cust_no=#{lkmCustNo},
+                        </if>
+                        <if test="lkmCustName != null and lkmCustName!=''">
+                            lkm_cust_name=#{lkmCustName},
+                        </if>
+                        <if test="lkmName != null and lkmName!=''">
+                            lkm_name=#{lkmName},
+                        </if>
+                        <if test="lkmSex != null and lkmSex!=''">
+                            lkm_sex=#{lkmSex},
+                        </if>
+                        <if test="lkmPostion != null and lkmPostion!=''">
+                            lkm_postion=#{lkmPostion},
+                        </if>
+                        <if test="lkmTel != null and lkmTel!=''">
+                            lkm_tel=#{lkmTel},
+                        </if>
+                        <if test="lkmMobile != null and lkmMobile!=''">
+                            lkm_mobile=#{lkmMobile},
+                        </if>
+                        <if test="lkmMemo != null and lkmMemo!=''">
+                            lkm_memo=#{lkmMemo}
+                        </if>
+        </trim>
+    </update>
+
+    <delete id="delCstLinkman" parameterType="int">
+        DELETE FROM cst_linkman WHERE lkm_Id=#{lkmId}
+    </delete>
+
+</mapper>

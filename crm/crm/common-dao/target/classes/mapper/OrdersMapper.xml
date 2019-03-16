@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bdqn.crm.mapper.OrdersMapper">
+
+    <select id="getOrdersById" resultType="cn.bdqn.crm.pojo.Orders">
+        select
+                odr_id as odrId,
+                odr_customer as odrCustomer,
+                odr_date as odrDate,
+                odr_addr as odrAddr,
+                odr_status as odrStatus
+        from orders
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="odrId != null">
+                and odr_id=#{odrId}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getOrdersListByMap" resultType="cn.bdqn.crm.pojo.Orders" parameterType="java.util.Map">
+        select
+                odr_id as odrId,
+                odr_customer as odrCustomer,
+                odr_date as odrDate,
+                odr_addr as odrAddr,
+                odr_status as odrStatus
+        from orders
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="odrId != null and odrId!=''">
+                    and odr_id=#{odrId}
+                </if>
+                <if test="odrCustomer != null and odrCustomer!=''">
+                    and odr_customer=#{odrCustomer}
+                </if>
+                <if test="odrDate != null and odrDate!=''">
+                    and odr_date=#{odrDate}
+                </if>
+                <if test="odrAddr != null and odrAddr!=''">
+                    and odr_addr=#{odrAddr}
+                </if>
+                <if test="odrStatus != null and odrStatus!=''">
+                    and odr_status=#{odrStatus}
+                </if>
+        </trim>
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getOrdersCountByMap" resultType="Integer"  parameterType="java.util.Map">
+        select count(*) from orders
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="odrId != null and odrId!=''">
+                    and odr_id=#{odrId}
+                </if>
+                <if test="odrCustomer != null and odrCustomer!=''">
+                    and odr_customer=#{odrCustomer}
+                </if>
+                <if test="odrDate != null and odrDate!=''">
+                    and odr_date=#{odrDate}
+                </if>
+                <if test="odrAddr != null and odrAddr!=''">
+                    and odr_addr=#{odrAddr}
+                </if>
+                <if test="odrStatus != null and odrStatus!=''">
+                    and odr_status=#{odrStatus}
+                </if>
+        </trim>
+    </select>
+
+    <insert id="insertOrders" parameterType="cn.bdqn.crm.pojo.Orders">
+        insert into orders(
+                        odr_id,
+                        odr_customer,
+                        odr_date,
+                        odr_addr,
+                        odr_status)
+        values(
+                     #{odrId},
+                     #{odrCustomer},
+                     #{odrDate},
+                     #{odrAddr},
+                    #{odrStatus})
+    </insert>
+
+    <update id="updateOrders" parameterType="cn.bdqn.crm.pojo.Orders">
+        update orders
+        <trim prefix="set" suffixOverrides="," suffix="where odrId=#{odrId}">
+                        <if test="odrId != null and odrId!=''">
+                            odr_id=#{odrId},
+                        </if>
+                        <if test="odrCustomer != null and odrCustomer!=''">
+                            odr_customer=#{odrCustomer},
+                        </if>
+                        <if test="odrDate != null and odrDate!=''">
+                            odr_date=#{odrDate},
+                        </if>
+                        <if test="odrAddr != null and odrAddr!=''">
+                            odr_addr=#{odrAddr},
+                        </if>
+                        <if test="odrStatus != null and odrStatus!=''">
+                            odr_status=#{odrStatus}
+                        </if>
+        </trim>
+    </update>
+
+    <delete id="delOrders" parameterType="int">
+        DELETE FROM orders WHERE odr_Id=#{odrId}
+    </delete>
+
+</mapper>

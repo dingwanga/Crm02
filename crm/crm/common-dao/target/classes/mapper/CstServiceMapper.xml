@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bdqn.crm.mapper.CstServiceMapper">
+
+    <select id="getCstServiceById" resultType="cn.bdqn.crm.pojo.CstService">
+        select
+                svr_id as svrId,
+                svr_type as svrType,
+                svr_title as svrTitle,
+                svr_cust_no as svrCustNo,
+                svr_cust_name as svrCustName,
+                svr_status as svrStatus,
+                svr_request as svrRequest,
+                svr_create_id as svrCreateId,
+                svr_create_by as svrCreateBy,
+                svr_create_date as svrCreateDate,
+                svr_due_id as svrDueId,
+                svr_due_to as svrDueTo,
+                svr_due_date as svrDueDate,
+                svr_deal as svrDeal,
+                svr_deal_id as svrDealId,
+                svr_deal_by as svrDealBy,
+                svr_deal_date as svrDealDate,
+                svr_result as svrResult,
+                svr_satisfy as svrSatisfy
+        from cst_service
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="svrId!= null">
+                and svr_id=#{svrId}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getCstServiceListByMap" resultType="cn.bdqn.crm.pojo.CstService" parameterType="java.util.Map">
+        select
+                svr_id as svrId,
+                svr_type as svrType,
+                svr_title as svrTitle,
+                svr_cust_no as svrCustNo,
+                svr_cust_name as svrCustName,
+                svr_status as svrStatus,
+                svr_request as svrRequest,
+                svr_create_id as svrCreateId,
+                svr_create_by as svrCreateBy,
+                svr_create_date as svrCreateDate,
+                svr_due_id as svrDueId,
+                svr_due_to as svrDueTo,
+                svr_due_date as svrDueDate,
+                svr_deal as svrDeal,
+                svr_deal_id as svrDealId,
+                svr_deal_by as svrDealBy,
+                svr_deal_date as svrDealDate,
+                svr_result as svrResult,
+                svr_satisfy as svrSatisfy
+        from cst_service
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="svrId != null and svrId!=''">
+                    and svr_id=#{svrId}
+                </if>
+                <if test="svrType != null and svrType!=''">
+                    and svr_type=#{svrType}
+                </if>
+                <if test="svrTitle != null and svrTitle!=''">
+                    and svr_title=#{svrTitle}
+                </if>
+                <if test="svrCustNo != null and svrCustNo!=''">
+                    and svr_cust_no=#{svrCustNo}
+                </if>
+                <if test="svrCustName != null and svrCustName!=''">
+                    and svr_cust_name=#{svrCustName}
+                </if>
+                <if test="svrStatus != null and svrStatus!=''">
+                    and svr_status=#{svrStatus}
+                </if>
+                <if test="svrRequest != null and svrRequest!=''">
+                    and svr_request=#{svrRequest}
+                </if>
+                <if test="svrCreateId != null and svrCreateId!=''">
+                    and svr_create_id=#{svrCreateId}
+                </if>
+                <if test="svrCreateBy != null and svrCreateBy!=''">
+                    and svr_create_by=#{svrCreateBy}
+                </if>
+                <if test="svrCreateDate != null and svrCreateDate!=''">
+                    and svr_create_date=#{svrCreateDate}
+                </if>
+                <if test="svrDueId != null and svrDueId!=''">
+                    and svr_due_id=#{svrDueId}
+                </if>
+                <if test="svrDueTo != null and svrDueTo!=''">
+                    and svr_due_to=#{svrDueTo}
+                </if>
+                <if test="svrDueDate != null and svrDueDate!=''">
+                    and svr_due_date=#{svrDueDate}
+                </if>
+                <if test="svrDeal != null and svrDeal!=''">
+                    and svr_deal=#{svrDeal}
+                </if>
+                <if test="svrDealId != null and svrDealId!=''">
+                    and svr_deal_id=#{svrDealId}
+                </if>
+                <if test="svrDealBy != null and svrDealBy!=''">
+                    and svr_deal_by=#{svrDealBy}
+                </if>
+                <if test="svrDealDate != null and svrDealDate!=''">
+                    and svr_deal_date=#{svrDealDate}
+                </if>
+                <if test="svrResult != null and svrResult!=''">
+                    and svr_result=#{svrResult}
+                </if>
+                <if test="svrSatisfy != null and svrSatisfy!=''">
+                    and svr_satisfy=#{svrSatisfy}
+                </if>
+        </trim>
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getCstServiceCountByMap" resultType="Integer"  parameterType="java.util.Map">
+        select count(*) from cst_service
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="svrId != null and svrId!=''">
+                    and svr_id=#{svrId}
+                </if>
+                <if test="svrType != null and svrType!=''">
+                    and svr_type=#{svrType}
+                </if>
+                <if test="svrTitle != null and svrTitle!=''">
+                    and svr_title=#{svrTitle}
+                </if>
+                <if test="svrCustNo != null and svrCustNo!=''">
+                    and svr_cust_no=#{svrCustNo}
+                </if>
+                <if test="svrCustName != null and svrCustName!=''">
+                    and svr_cust_name=#{svrCustName}
+                </if>
+                <if test="svrStatus != null and svrStatus!=''">
+                    and svr_status=#{svrStatus}
+                </if>
+                <if test="svrRequest != null and svrRequest!=''">
+                    and svr_request=#{svrRequest}
+                </if>
+                <if test="svrCreateId != null and svrCreateId!=''">
+                    and svr_create_id=#{svrCreateId}
+                </if>
+                <if test="svrCreateBy != null and svrCreateBy!=''">
+                    and svr_create_by=#{svrCreateBy}
+                </if>
+                <if test="svrCreateDate != null and svrCreateDate!=''">
+                    and svr_create_date=#{svrCreateDate}
+                </if>
+                <if test="svrDueId != null and svrDueId!=''">
+                    and svr_due_id=#{svrDueId}
+                </if>
+                <if test="svrDueTo != null and svrDueTo!=''">
+                    and svr_due_to=#{svrDueTo}
+                </if>
+                <if test="svrDueDate != null and svrDueDate!=''">
+                    and svr_due_date=#{svrDueDate}
+                </if>
+                <if test="svrDeal != null and svrDeal!=''">
+                    and svr_deal=#{svrDeal}
+                </if>
+                <if test="svrDealId != null and svrDealId!=''">
+                    and svr_deal_id=#{svrDealId}
+                </if>
+                <if test="svrDealBy != null and svrDealBy!=''">
+                    and svr_deal_by=#{svrDealBy}
+                </if>
+                <if test="svrDealDate != null and svrDealDate!=''">
+                    and svr_deal_date=#{svrDealDate}
+                </if>
+                <if test="svrResult != null and svrResult!=''">
+                    and svr_result=#{svrResult}
+                </if>
+                <if test="svrSatisfy != null and svrSatisfy!=''">
+                    and svr_satisfy=#{svrSatisfy}
+                </if>
+        </trim>
+    </select>
+
+    <insert id="insertCstService" parameterType="cn.bdqn.crm.pojo.CstService">
+        insert into cst_service(
+                        svr_id,
+                        svr_type,
+                        svr_title,
+                        svr_cust_no,
+                        svr_cust_name,
+                        svr_status,
+                        svr_request,
+                        svr_create_id,
+                        svr_create_by,
+                        svr_create_date,
+                        svr_due_id,
+                        svr_due_to,
+                        svr_due_date,
+                        svr_deal,
+                        svr_deal_id,
+                        svr_deal_by,
+                        svr_deal_date,
+                        svr_result,
+                        svr_satisfy)
+        values(
+                     #{svrId},
+                     #{svrType},
+                     #{svrTitle},
+                     #{svrCustNo},
+                     #{svrCustName},
+                     #{svrStatus},
+                     #{svrRequest},
+                     #{svrCreateId},
+                     #{svrCreateBy},
+                     #{svrCreateDate},
+                     #{svrDueId},
+                     #{svrDueTo},
+                     #{svrDueDate},
+                     #{svrDeal},
+                     #{svrDealId},
+                     #{svrDealBy},
+                     #{svrDealDate},
+                     #{svrResult},
+                    #{svrSatisfy})
+    </insert>
+
+    <update id="updateCstService" parameterType="cn.bdqn.crm.pojo.CstService">
+        update cst_service
+        <trim prefix="set" suffixOverrides="," suffix="where svrId=#{svrId}">
+                        <if test="svrId != null and svrId!=''">
+                            svr_id=#{svrId},
+                        </if>
+                        <if test="svrType != null and svrType!=''">
+                            svr_type=#{svrType},
+                        </if>
+                        <if test="svrTitle != null and svrTitle!=''">
+                            svr_title=#{svrTitle},
+                        </if>
+                        <if test="svrCustNo != null and svrCustNo!=''">
+                            svr_cust_no=#{svrCustNo},
+                        </if>
+                        <if test="svrCustName != null and svrCustName!=''">
+                            svr_cust_name=#{svrCustName},
+                        </if>
+                        <if test="svrStatus != null and svrStatus!=''">
+                            svr_status=#{svrStatus},
+                        </if>
+                        <if test="svrRequest != null and svrRequest!=''">
+                            svr_request=#{svrRequest},
+                        </if>
+                        <if test="svrCreateId != null and svrCreateId!=''">
+                            svr_create_id=#{svrCreateId},
+                        </if>
+                        <if test="svrCreateBy != null and svrCreateBy!=''">
+                            svr_create_by=#{svrCreateBy},
+                        </if>
+                        <if test="svrCreateDate != null and svrCreateDate!=''">
+                            svr_create_date=#{svrCreateDate},
+                        </if>
+                        <if test="svrDueId != null and svrDueId!=''">
+                            svr_due_id=#{svrDueId},
+                        </if>
+                        <if test="svrDueTo != null and svrDueTo!=''">
+                            svr_due_to=#{svrDueTo},
+                        </if>
+                        <if test="svrDueDate != null and svrDueDate!=''">
+                            svr_due_date=#{svrDueDate},
+                        </if>
+                        <if test="svrDeal != null and svrDeal!=''">
+                            svr_deal=#{svrDeal},
+                        </if>
+                        <if test="svrDealId != null and svrDealId!=''">
+                            svr_deal_id=#{svrDealId},
+                        </if>
+                        <if test="svrDealBy != null and svrDealBy!=''">
+                            svr_deal_by=#{svrDealBy},
+                        </if>
+                        <if test="svrDealDate != null and svrDealDate!=''">
+                            svr_deal_date=#{svrDealDate},
+                        </if>
+                        <if test="svrResult != null and svrResult!=''">
+                            svr_result=#{svrResult},
+                        </if>
+                        <if test="svrSatisfy != null and svrSatisfy!=''">
+                            svr_satisfy=#{svrSatisfy}
+                        </if>
+        </trim>
+    </update>
+
+    <delete id="delCstService" parameterType="int">
+        DELETE FROM cst_service WHERE svr_Id=#{svrId}
+    </delete>
+
+</mapper>

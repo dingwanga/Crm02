@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bdqn.crm.mapper.SalPlanMapper">
+
+    <select id="getSalPlanById" resultType="cn.bdqn.crm.pojo.SalPlan">
+        select
+                pla_id as plaId,
+                pla_chc_id as plaChcId,
+                pla_date as plaDate,
+                pla_todo as plaTodo,
+                pla_result as plaResult
+        from sal_plan
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="plaId != null">
+                and pla_id=#{plaId}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getSalPlanListByMap" resultType="cn.bdqn.crm.pojo.SalPlan" parameterType="java.util.Map">
+        select
+                pla_id as plaId,
+                pla_chc_id as plaChcId,
+                pla_date as plaDate,
+                pla_todo as plaTodo,
+                pla_result as plaResult
+        from sal_plan
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="plaId != null and plaId!=''">
+                    and pla_id=#{plaId}
+                </if>
+                <if test="plaChcId != null and plaChcId!=''">
+                    and pla_chc_id=#{plaChcId}
+                </if>
+                <if test="plaDate != null and plaDate!=''">
+                    and pla_date=#{plaDate}
+                </if>
+                <if test="plaTodo != null and plaTodo!=''">
+                    and pla_todo=#{plaTodo}
+                </if>
+                <if test="plaResult != null and plaResult!=''">
+                    and pla_result=#{plaResult}
+                </if>
+        </trim>
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getSalPlanCountByMap" resultType="Integer"  parameterType="java.util.Map">
+        select count(*) from sal_plan
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="plaId != null and plaId!=''">
+                    and pla_id=#{plaId}
+                </if>
+                <if test="plaChcId != null and plaChcId!=''">
+                    and pla_chc_id=#{plaChcId}
+                </if>
+                <if test="plaDate != null and plaDate!=''">
+                    and pla_date=#{plaDate}
+                </if>
+                <if test="plaTodo != null and plaTodo!=''">
+                    and pla_todo=#{plaTodo}
+                </if>
+                <if test="plaResult != null and plaResult!=''">
+                    and pla_result=#{plaResult}
+                </if>
+        </trim>
+    </select>
+
+    <insert id="insertSalPlan" parameterType="cn.bdqn.crm.pojo.SalPlan">
+        insert into sal_plan(
+                        pla_id,
+                        pla_chc_id,
+                        pla_date,
+                        pla_todo,
+                        pla_result)
+        values(
+                     #{plaId},
+                     #{plaChcId},
+                     #{plaDate},
+                     #{plaTodo},
+                    #{plaResult})
+    </insert>
+
+    <update id="updateSalPlan" parameterType="cn.bdqn.crm.pojo.SalPlan">
+        update sal_plan
+        <trim prefix="set" suffixOverrides="," suffix="where plaId=#{plaId}">
+                        <if test="plaId != null and plaId!=''">
+                            pla_id=#{plaId},
+                        </if>
+                        <if test="plaChcId != null and plaChcId!=''">
+                            pla_chc_id=#{plaChcId},
+                        </if>
+                        <if test="plaDate != null and plaDate!=''">
+                            pla_date=#{plaDate},
+                        </if>
+                        <if test="plaTodo != null and plaTodo!=''">
+                            pla_todo=#{plaTodo},
+                        </if>
+                        <if test="plaResult != null and plaResult!=''">
+                            pla_result=#{plaResult}
+                        </if>
+        </trim>
+    </update>
+
+    <delete id="delSalPlan" parameterType="int">
+        DELETE FROM sal_plan WHERE pla_id=#{plaId}
+    </delete>
+
+</mapper>

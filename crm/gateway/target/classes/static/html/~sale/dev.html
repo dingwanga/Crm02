@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>客户开发计划</title>
+    <meta charset="utf-8">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <script src="../script/common.js"></script>
+    <script src="../../js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function () {
+            var token = localStorage.getItem("token");
+            $.ajax({
+                url: "../../user/getUser?token=" + token,
+                type: "get",
+                success: function (obj) {
+                    if (obj.code === 0) {
+                        var id = obj.result.usr_id;
+                        $("#userId").val(id);
+                        $.ajax({
+                            url: "../../marketing/list?chc_due_id=" + id,
+                            type: "get",
+                            success: function (obj) {
+                                if (obj.code === 0) {
+                                    fillTable(obj);
+                                } else {
+                                    alert("error");
+                                }
+                            }
+                        });
+                    } else {
+                        alert(obj.msg);
+                    }
+                }
+            });
+        });
+
+        function go() {
+            var pageNo = $("#pageNo").val();
+            search(pageNo);
+        }
+
+        function search(pageNo) {
+            var id = $("#userId").val();
+            var data = "chc_due_id=" + id;
+            var pageSize = $("#pageSize").val();
+            data += "&pageNo=" + pageNo + "&pageSize=" + pageSize;
+            var cust_name = $("#cust_name").val();
+            if (cust_name !== "") {
+                data += "&chc_cust_name=" + cust_name;
+            }
+            var title = $("#title").val();
+            if (title !== "") {
+                data += "&chc_title=" + title;
+            }
+            var linkman = $("#linkman").val();
+            if (linkman !== "") {
+                data += "&chc_linkman=" + linkman;
+            }
+            $.ajax({
+                url: "../../marketing/list",
+                type: "get",
+                data: data,
+                success: function (obj) {
+                    if (obj.code === 0) {
+                        fillTable(obj);
+                    } else {
+                        alert("error");
+                    }
+                }
+            });
+        }
+
+        function fillTable(obj) {
+            var table = $("#main");
+            table.empty().append("<tr><th width='5%'>编号</th><th width='15%'>客户名称</th><th width='25%'>概要</th><th width='10%'>联系人</th><th width='12.5%'>联系人电话</th><th width='12.5%'>创建时间</th><th width='10%'>状态</th><th width='10%'>操作</th></tr>");
+            $.each(obj.result.list, function (i, chance) {
+                var str = "<tr><td class='list_data_text'>" + chance.chc_id + "</td>" +
+                    "<td class='list_data_text'>" + chance.chc_cust_name + "</td>" +
+                    "<td class='list_data_ltext'>" + chance.chc_title + "</td>" +
+                    "<td class='list_data_text'>" + chance.chc_linkman + "</td>" +
+                    "<td class='list_data_text'>" + chance.chc_tel + "</td>" +
+                    "<td class='list_data_text'>" + formatDate(chance.chc_create_date) + "</td>";
+                if (chance.chc_status === 1 || chance.chc_status === 2) {
+                    str += "<td class='list_data_text'>开发中</td>" +
+                        "<td class='list_data_op'>" +
+                        "<img onclick='toUrl(" + chance.chc_id + ",\"dev_plan.html\");' title='制定计划' src='../images/bt_plan.gif' class='op_button'/>&nbsp;&nbsp;&nbsp;&nbsp;" +
+                        "<img onclick='toUrl(" + chance.chc_id + ",\"dev_execute.html\");' title='执行计划' src='../images/bt_feedback.gif' class='op_button'/>&nbsp;&nbsp;&nbsp;&nbsp;" +
+                        "<img onclick='developChance(\"" + chance.chc_id + "\");' title='开发成功' src='../images/bt_yes.gif' class='op_button'/>" +
+                        "</td></tr>";
+                } else if (chance.chc_status === 3 || chance.chc_status === 4) {
+                    str += "<td class='list_data_text'>已归档</td>" +
+                        "<td class='list_data_op'>" +
+                        "<img onclick='toUrl(" + chance.chc_id + ",\"dev_detail.html\");' title='查看' src='../images/bt_detail.gif' class='op_button'/>" +
+                        "</td></tr>";
+                }
+                table.append(str);
+            });
+            table.append("<tr><th colspan='10' class='pager'>" +
+                "<div class='pager'>" +
+                "共" + obj.result.count + "条记录&nbsp;&nbsp;" +
+                "每页<input type='number' id='pageSize' value='" + obj.result.pageSize + "' style='width:40px'/>条&nbsp;&nbsp;" +
+                "第" + obj.result.pageNo + "页/共" + obj.result.pageCount + "页&nbsp;&nbsp;" +
+                "<a href='javascript:search(1)'>第一页</a>&nbsp;" +
+                "<a href='javascript:search(" + (obj.result.pageNo - 1) + ")'>上一页</a>&nbsp;&nbsp;" +
+                "<a href='javascript:search(" + (obj.result.pageNo + 1) + ")'>下一页</a>&nbsp;&nbsp;" +
+                "<a href='javascript:search(" + obj.result.pageCount + ")'>最后一页</a>&nbsp;&nbsp;" +
+                "转到<input type='number' min='1' id='pageNo' value='" + obj.result.pageNo + "' style='width:40px'/>页" +
+                "<button onclick='go();'>GO</button>" +
+                "</div></th></tr>");
+        }
+
+        function developChance(id) {
+            $.ajax({
+                url: "../../marketing/developSalChance/" + id,
+                type: "put",
+                success: function (obj) {
+                    if (obj.code === 0) {
+                        alert("开发成功！");
+                        reload(true);
+                    } else {
+                        alert(obj.msg);
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<input type="hidden" id="userId" value="0"/>
+<div class="page_title">客户开发计划</div>
+<div class="button_bar">
+    <button class="common_button" onclick="help('客户开发计划');">帮助</button>
+    <button class="common_button" onclick="search(1);">查询</button>
+</div>
+<table class="query_form_table">
+    <tr>
+        <th>客户名称</th>
+        <td><input type="text" id="cust_name" size="20"/></td>
+        <th>概要</th>
+        <td><input type="text" id="title" size="20"/></td>
+        <th>联系人</th>
+        <td><input type="text" id="linkman" size="20"/></td>
+    </tr>
+</table>
+<br/>
+<table id="main" class="data_list_table">
+</table>
+</body>
+</html>

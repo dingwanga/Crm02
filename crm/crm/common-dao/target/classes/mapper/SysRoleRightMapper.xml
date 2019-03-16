@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bdqn.crm.mapper.SysRoleRightMapper">
+
+    <select id="getSysRoleRightById" resultType="cn.bdqn.crm.pojo.SysRoleRight">
+        select
+                rf_id as rfId,
+                rf_role_id as rfRoleId,
+                rf_right_code as rfRightCode
+        from sys_role_right
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="rfId != null">
+                and rf_id=#{rfId}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getSysRoleRightListByMap" resultType="cn.bdqn.crm.pojo.SysRoleRight" parameterType="java.util.Map">
+        select
+                rf_id as rfId,
+                rf_role_id as rfRoleId,
+                rf_right_code as rfRightCode
+        from sys_role_right
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="rfId != null and rfId!=''">
+                    and rf_id=#{rfId}
+                </if>
+                <if test="rfRoleId != null and rfRoleId!=''">
+                    and rf_role_id=#{rfRoleId}
+                </if>
+                <if test="rfRightCode != null and rfRightCode!=''">
+                    and rf_right_code=#{rfRightCode}
+                </if>
+        </trim>
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getSysRoleRightCountByMap" resultType="Integer"  parameterType="java.util.Map">
+        select count(*) from sys_role_right
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="rfId != null and rfId!=''">
+                    and rf_id=#{rfId}
+                </if>
+                <if test="rfRoleId != null and rfRoleId!=''">
+                    and rf_role_id=#{rfRoleId}
+                </if>
+                <if test="rfRightCode != null and rfRightCode!=''">
+                    and rf_right_code=#{rfRightCode}
+                </if>
+        </trim>
+    </select>
+
+    <insert id="insertSysRoleRight" parameterType="cn.bdqn.crm.pojo.SysRoleRight">
+        insert into sys_role_right(
+                        rf_id,
+                        rf_role_id,
+                        rf_right_code)
+        values(
+                     #{rfId},
+                     #{rfRoleId},
+                    #{rfRightCode})
+    </insert>
+
+    <update id="updateSysRoleRight" parameterType="cn.bdqn.crm.pojo.SysRoleRight">
+        update sys_role_right
+        <trim prefix="set" suffixOverrides="," suffix="where rfId=#{rfId}">
+                        <if test="rfId != null and rfId!=''">
+                            rf_id=#{rfId},
+                        </if>
+                        <if test="rfRoleId != null and rfRoleId!=''">
+                            rf_role_id=#{rfRoleId},
+                        </if>
+                        <if test="rfRightCode != null and rfRightCode!=''">
+                            rf_right_code=#{rfRightCode}
+                        </if>
+        </trim>
+    </update>
+
+    <delete id="delSysRoleRight" parameterType="int">
+        DELETE FROM sys_role_right WHERE rf_Id=#{rfId}
+    </delete>
+
+</mapper>

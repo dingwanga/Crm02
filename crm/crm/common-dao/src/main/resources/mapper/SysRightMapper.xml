@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bdqn.crm.mapper.SysRightMapper">
+
+    <select id="getSysRightById" resultType="cn.bdqn.crm.pojo.SysRight">
+        select
+                right_code as rightCode,
+                right_parent_code as rightParentCode,
+                right_type as rightType,
+                right_text as rightText,
+                right_url as rightUrl,
+                right_tip as rightTip
+        from sys_right
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="rightCode != null">
+                and right_code=#{rightCode}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getSysRightListByMap" resultType="cn.bdqn.crm.pojo.SysRight" parameterType="java.util.Map">
+        select
+                right_code as rightCode,
+                right_parent_code as rightParentCode,
+                right_type as rightType,
+                right_text as rightText,
+                right_url as rightUrl,
+                right_tip as rightTip
+        from sys_right
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="rightCode != null and rightCode!=''">
+                    and right_code=#{rightCode}
+                </if>
+                <if test="rightParentCode != null and rightParentCode!=''">
+                    and right_parent_code=#{rightParentCode}
+                </if>
+                <if test="rightType != null and rightType!=''">
+                    and right_type=#{rightType}
+                </if>
+                <if test="rightText != null and rightText!=''">
+                    and right_text=#{rightText}
+                </if>
+                <if test="rightUrl != null and rightUrl!=''">
+                    and right_url=#{rightUrl}
+                </if>
+                <if test="rightTip != null and rightTip!=''">
+                    and right_tip=#{rightTip}
+                </if>
+        </trim>
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getSysRightCountByMap" resultType="Integer"  parameterType="java.util.Map">
+        select count(*) from sys_right
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="rightCode != null and rightCode!=''">
+                    and right_code=#{rightCode}
+                </if>
+                <if test="rightParentCode != null and rightParentCode!=''">
+                    and right_parent_code=#{rightParentCode}
+                </if>
+                <if test="rightType != null and rightType!=''">
+                    and right_type=#{rightType}
+                </if>
+                <if test="rightText != null and rightText!=''">
+                    and right_text=#{rightText}
+                </if>
+                <if test="rightUrl != null and rightUrl!=''">
+                    and right_url=#{rightUrl}
+                </if>
+                <if test="rightTip != null and rightTip!=''">
+                    and right_tip=#{rightTip}
+                </if>
+        </trim>
+    </select>
+
+    <insert id="insertSysRight" parameterType="cn.bdqn.crm.pojo.SysRight">
+        insert into sys_right(
+                        right_code,
+                        right_parent_code,
+                        right_type,
+                        right_text,
+                        right_url,
+                        right_tip)
+        values(
+                     #{rightCode},
+                     #{rightParentCode},
+                     #{rightType},
+                     #{rightText},
+                     #{rightUrl},
+                    #{rightTip})
+    </insert>
+
+    <update id="updateSysRight" parameterType="cn.bdqn.crm.pojo.SysRight">
+        update sys_right
+        <trim prefix="set" suffixOverrides="," suffix="where rightCode=#{rightCode}">
+                        <if test="rightCode != null and rightCode!=''">
+                            right_code=#{rightCode},
+                        </if>
+                        <if test="rightParentCode != null and rightParentCode!=''">
+                            right_parent_code=#{rightParentCode},
+                        </if>
+                        <if test="rightType != null and rightType!=''">
+                            right_type=#{rightType},
+                        </if>
+                        <if test="rightText != null and rightText!=''">
+                            right_text=#{rightText},
+                        </if>
+                        <if test="rightUrl != null and rightUrl!=''">
+                            right_url=#{rightUrl},
+                        </if>
+                        <if test="rightTip != null and rightTip!=''">
+                            right_tip=#{rightTip}
+                        </if>
+        </trim>
+    </update>
+
+    <delete id="delSysRight" parameterType="string">
+        DELETE FROM sys_right WHERE right_code =#{rightCode}
+    </delete>
+
+</mapper>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>销售机会管理</title>
+    <meta charset="UTF-8">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <script src="../script/common.js"></script>
+    <script src="../../js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                url: "../../marketing/list",
+                type: "get",
+                success: function (obj) {
+                    if (obj.code === 0) {
+                        fillTable(obj);
+                    } else {
+                        alert("error")
+                    }
+                }
+            });
+        });
+
+        function go() {
+            var pageNo = $("#pageNo").val();
+            search(pageNo);
+        }
+
+        function search(pageNo) {
+            var pageSize = $("#pageSize").val();
+            var data = "pageNo=" + pageNo + "&pageSize=" + pageSize;
+            var cust_name = $("#cust_name").val();
+            if (cust_name !== "") {
+                data += "&chc_cust_name=" + cust_name;
+            }
+            var title = $("#title").val();
+            if (title !== "") {
+                data += "&chc_title=" + title;
+            }
+            var linkman = $("#linkman").val();
+            if (linkman !== "") {
+                data += "&chc_linkman=" + linkman;
+            }
+            $.ajax({
+                url: "../../marketing/list",
+                type: "get",
+                data: data,
+                success: function (obj) {
+                    if (obj.code === 0) {
+                        fillTable(obj);
+                    } else {
+                        alert("error");
+                    }
+                }
+            });
+        }
+
+        function fillTable(obj) {
+            var table = $("#main");
+            table.empty().append("<tr><th width='5%'>编号</th><th width='15%'>客户名称</th><th width='25%'>概要</th><th width='10%'>联系人</th><th width='15%'>联系人电话</th><th width='15%'>创建时间</th><th width='15%'>操作</th></tr>");
+            $.each(obj.result.list, function (i, chance) {
+                var str = "<tr><td class='list_data_text'>" + chance.chc_id + "</td>" +
+                    "<td class='list_data_text'>" + chance.chc_cust_name + "</td>" +
+                    "<td class='list_data_ltext'>" + chance.chc_title + "</td>" +
+                    "<td class='list_data_text'>" + chance.chc_linkman + "</td>" +
+                    "<td class='list_data_text'>" + chance.chc_tel + "</td>" +
+                    "<td class='list_data_text'>" + formatDate(chance.chc_create_date) + "</td>" +
+                    "<td class='list_data_op'>" +
+                    "<img onclick=\"toUrl(" + chance.chc_id + ",'dispatch.html');\" title='指派' src='../images/bt_linkman.gif' class='op_button'/>&nbsp;&nbsp;&nbsp;&nbsp;" +
+                    "<img onclick=\"toUrl(" + chance.chc_id + ",'edit.html');\" title='编辑' src='../images/bt_edit.gif' class='op_button'/>&nbsp;&nbsp;&nbsp;&nbsp;" +
+                    "<img onclick=\"delSalChance(" + chance.chc_id + ");\" title='删除' src='../images/bt_del.gif' class='op_button'/>" +
+                    "</td></tr>";
+                table.append(str);
+            });
+            table.append("<tr><th colspan='7' class='pager'>" +
+                "<div class='pager'>" +
+                "共" + obj.result.count + "条记录&nbsp;&nbsp;" +
+                "每页<input type='number' id='pageSize' value='" + obj.result.pageSize + "' style='width:40px''/>条&nbsp;&nbsp;" +
+                "第" + obj.result.pageNo + "页/共" + obj.result.pageCount + "页&nbsp;&nbsp;" +
+                "<a href='javascript:search(1)'>第一页</a>&nbsp;" +
+                "<a href='javascript:search(" + (obj.result.pageNo - 1) + ")'>上一页</a>&nbsp;&nbsp;" +
+                "<a href='javascript:search(" + (obj.result.pageNo + 1) + ")'>下一页</a>&nbsp;&nbsp;" +
+                "<a href='javascript:search(" + obj.result.pageCount + ")'>最后一页</a>&nbsp;&nbsp;" +
+                "转到<input type='number' min='1' id='pageNo' value='" + obj.result.pageNo + "' style='width:40px'/>页" +
+                "<button onclick='go();'>GO</button>" +
+                "</div></th></tr>");
+        }
+
+        function delSalChance(id) {
+            var flag = confirm("你确定要删除吗？");
+            if (flag) {
+                $.ajax({
+                    url: "../../marketing/delSalChance/" + id,
+                    type: "delete",
+                    success: function (obj) {
+                        if (obj.code === 0) {
+                            alert("删除成功！");
+                            go();
+                        } else {
+                            alert(obj.msg);
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="page_title">销售机会管理</div>
+<div class="button_bar">
+    <button class="common_button" onclick="help('销售机会管理');">帮助</button>
+    <button class="common_button" onclick="to('add.html');">新建</button>
+    <button class="common_button" onclick="search(1);">查询</button>
+</div>
+<table class="query_form_table">
+    <tr>
+        <th>客户名称</th>
+        <td><input type="text" id="cust_name" size="20"/></td>
+        <th>概要</th>
+        <td><input type="text" id="title" size="20"/></td>
+        <th>联系人</th>
+        <td><input type="text" id="linkman" size="20"/></td>
+    </tr>
+</table>
+<br/>
+<table id="main" class="data_list_table">
+</table>
+</body>
+</html>

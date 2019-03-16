@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bdqn.crm.mapper.CstLostMapper">
+
+    <select id="getCstLostById" resultType="cn.bdqn.crm.pojo.CstLost">
+        select
+                lst_id as lstId,
+                lst_cust_no as lstCustNo,
+                lst_cust_name as lstCustName,
+                lst_cust_manager_id as lstCustManagerId,
+                lst_cust_manager_name as lstCustManagerName,
+                lst_last_order_date as lstLastOrderDate,
+                lst_lost_date as lstLostDate,
+                lst_delay as lstDelay,
+                lst_reason as lstReason,
+                lst_status as lstStatus
+        from cst_lost
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="lstId != null">
+                and lst_id=#{lstId}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getCstLostListByMap" resultType="cn.bdqn.crm.pojo.CstLost" parameterType="java.util.Map">
+        select
+                lst_id as lstId,
+                lst_cust_no as lstCustNo,
+                lst_cust_name as lstCustName,
+                lst_cust_manager_id as lstCustManagerId,
+                lst_cust_manager_name as lstCustManagerName,
+                lst_last_order_date as lstLastOrderDate,
+                lst_lost_date as lstLostDate,
+                lst_delay as lstDelay,
+                lst_reason as lstReason,
+                lst_status as lstStatus
+        from cst_lost
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="lstId != null and lstId!=''">
+                    and lst_id=#{lstId}
+                </if>
+                <if test="lstCustNo != null and lstCustNo!=''">
+                    and lst_cust_no=#{lstCustNo}
+                </if>
+                <if test="lstCustName != null and lstCustName!=''">
+                    and lst_cust_name=#{lstCustName}
+                </if>
+                <if test="lstCustManagerId != null and lstCustManagerId!=''">
+                    and lst_cust_manager_id=#{lstCustManagerId}
+                </if>
+                <if test="lstCustManagerName != null and lstCustManagerName!=''">
+                    and lst_cust_manager_name=#{lstCustManagerName}
+                </if>
+                <if test="lstLastOrderDate != null and lstLastOrderDate!=''">
+                    and lst_last_order_date=#{lstLastOrderDate}
+                </if>
+                <if test="lstLostDate != null and lstLostDate!=''">
+                    and lst_lost_date=#{lstLostDate}
+                </if>
+                <if test="lstDelay != null and lstDelay!=''">
+                    and lst_delay=#{lstDelay}
+                </if>
+                <if test="lstReason != null and lstReason!=''">
+                    and lst_reason=#{lstReason}
+                </if>
+                <if test="lstStatus != null and lstStatus!=''">
+                    and lst_status=#{lstStatus}
+                </if>
+        </trim>
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getCstLostCountByMap" resultType="Integer"  parameterType="java.util.Map">
+        select count(*) from cst_lost
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="lstId != null and lstId!=''">
+                    and lst_id=#{lstId}
+                </if>
+                <if test="lstCustNo != null and lstCustNo!=''">
+                    and lst_cust_no=#{lstCustNo}
+                </if>
+                <if test="lstCustName != null and lstCustName!=''">
+                    and lst_cust_name=#{lstCustName}
+                </if>
+                <if test="lstCustManagerId != null and lstCustManagerId!=''">
+                    and lst_cust_manager_id=#{lstCustManagerId}
+                </if>
+                <if test="lstCustManagerName != null and lstCustManagerName!=''">
+                    and lst_cust_manager_name=#{lstCustManagerName}
+                </if>
+                <if test="lstLastOrderDate != null and lstLastOrderDate!=''">
+                    and lst_last_order_date=#{lstLastOrderDate}
+                </if>
+                <if test="lstLostDate != null and lstLostDate!=''">
+                    and lst_lost_date=#{lstLostDate}
+                </if>
+                <if test="lstDelay != null and lstDelay!=''">
+                    and lst_delay=#{lstDelay}
+                </if>
+                <if test="lstReason != null and lstReason!=''">
+                    and lst_reason=#{lstReason}
+                </if>
+                <if test="lstStatus != null and lstStatus!=''">
+                    and lst_status=#{lstStatus}
+                </if>
+        </trim>
+    </select>
+
+    <insert id="insertCstLost" parameterType="cn.bdqn.crm.pojo.CstLost">
+        insert into cst_lost(
+                        lst_id,
+                        lst_cust_no,
+                        lst_cust_name,
+                        lst_cust_manager_id,
+                        lst_cust_manager_name,
+                        lst_last_order_date,
+                        lst_lost_date,
+                        lst_delay,
+                        lst_reason,
+                        lst_status)
+        values(
+                     #{lstId},
+                     #{lstCustNo},
+                     #{lstCustName},
+                     #{lstCustManagerId},
+                     #{lstCustManagerName},
+                     #{lstLastOrderDate},
+                     #{lstLostDate},
+                     #{lstDelay},
+                     #{lstReason},
+                    #{lstStatus})
+    </insert>
+
+    <update id="updateCstLost" parameterType="cn.bdqn.crm.pojo.CstLost">
+        update cst_lost
+        <trim prefix="set" suffixOverrides="," suffix="where lstId=#{lstId}">
+                        <if test="lstId != null and lstId!=''">
+                            lst_id=#{lstId},
+                        </if>
+                        <if test="lstCustNo != null and lstCustNo!=''">
+                            lst_cust_no=#{lstCustNo},
+                        </if>
+                        <if test="lstCustName != null and lstCustName!=''">
+                            lst_cust_name=#{lstCustName},
+                        </if>
+                        <if test="lstCustManagerId != null and lstCustManagerId!=''">
+                            lst_cust_manager_id=#{lstCustManagerId},
+                        </if>
+                        <if test="lstCustManagerName != null and lstCustManagerName!=''">
+                            lst_cust_manager_name=#{lstCustManagerName},
+                        </if>
+                        <if test="lstLastOrderDate != null and lstLastOrderDate!=''">
+                            lst_last_order_date=#{lstLastOrderDate},
+                        </if>
+                        <if test="lstLostDate != null and lstLostDate!=''">
+                            lst_lost_date=#{lstLostDate},
+                        </if>
+                        <if test="lstDelay != null and lstDelay!=''">
+                            lst_delay=#{lstDelay},
+                        </if>
+                        <if test="lstReason != null and lstReason!=''">
+                            lst_reason=#{lstReason},
+                        </if>
+                        <if test="lstStatus != null and lstStatus!=''">
+                            lst_status=#{lstStatus}
+                        </if>
+        </trim>
+    </update>
+
+    <delete id="delCstLost" parameterType="int">
+        DELETE FROM cst_lost WHERE lst_Id=#{lstId}
+    </delete>
+
+</mapper>

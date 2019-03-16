@@ -1,0 +1,1271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="11054e1a-1566-45e6-864c-6231001e86ff" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/common/target/" />
+    <ignored path="$PROJECT_DIR$/eureka/target/" />
+    <ignored path="$PROJECT_DIR$/user/target/" />
+    <ignored path="$PROJECT_DIR$/gateway/target/" />
+    <ignored path="$PROJECT_DIR$/marketing-management/target/" />
+    <ignored path="$PROJECT_DIR$/customer-management/target/" />
+    <ignored path="$PROJECT_DIR$/base/target/" />
+    <ignored path="$PROJECT_DIR$/rept/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1037345743">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="38" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.10" value="7" />
+          <entry key="project.open.time.11" value="8" />
+          <entry key="project.open.time.12" value="6" />
+          <entry key="project.open.time.13" value="5" />
+          <entry key="project.open.time.14" value="4" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="4" />
+          <entry key="project.opened" value="41" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="44" />
+          <entry key="dummy" value="40" />
+          <entry key="htm" value="13" />
+          <entry key="html" value="34940" />
+          <entry key="java" value="27465" />
+          <entry key="js" value="393" />
+          <entry key="xml" value="55" />
+          <entry key="yml" value="437" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="47" />
+          <entry key="HTML" value="34950" />
+          <entry key="JAVA" value="27465" />
+          <entry key="JavaScript" value="393" />
+          <entry key="PLAIN_TEXT" value="40" />
+          <entry key="XML" value="55" />
+          <entry key="YAML" value="437" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="8" value="1" />
+          <entry key="bak" value="4" />
+          <entry key="css" value="13" />
+          <entry key="htm" value="4" />
+          <entry key="html" value="302" />
+          <entry key="java" value="349" />
+          <entry key="js" value="41" />
+          <entry key="xml" value="40" />
+          <entry key="yml" value="77" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="13" />
+          <entry key="HTML" value="306" />
+          <entry key="JAVA" value="349" />
+          <entry key="JavaScript" value="41" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="UML" value="1" />
+          <entry key="XML" value="40" />
+          <entry key="YAML" value="77" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/static/html/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3633">
+              <caret line="173" column="20" selection-start-line="173" selection-start-column="20" selection-end-line="173" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/static/html/index2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="46" column="43" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>op_</find>
+      <find>pager</find>
+    </findStrings>
+    <dirStrings>
+      <dir>D:\Document\IntelliJ IDEA\CRM\eureka\src</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/common/src/main/java/com/shanyu/pojo/CustLostParam.java" />
+        <option value="$PROJECT_DIR$/gateway/src/main/resources/static/html/~cust/lost/relay.html" />
+        <option value="$PROJECT_DIR$/customer-management/src/main/java/com/shanyu/service/impl/CustomerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/customer-management/src/main/java/com/shanyu/controller/CustomerController.java" />
+        <option value="$PROJECT_DIR$/gateway/src/main/resources/static/html/~cust/cust/list.html" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/shanyu/pojo/DictParam.java" />
+        <option value="$PROJECT_DIR$/gateway/src/main/resources/static/html/~basd/dict_add.html" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/shanyu/service/DictService.java" />
+        <option value="$PROJECT_DIR$/base/src/main/java/com/shanyu/service/impl/DictServiceImpl.java" />
+        <option value="$PROJECT_DIR$/base/src/main/java/com/shanyu/controller/DictController.java" />
+        <option value="$PROJECT_DIR$/base/src/main/java/com/shanyu/mapper/DictMapper.java" />
+        <option value="$PROJECT_DIR$/gateway/src/main/resources/static/html/~basd/dict_edit.html" />
+        <option value="$PROJECT_DIR$/customer-management/src/main/java/com/shanyu/mapper/CustLostMapper.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/shanyu/service/CustLostService.java" />
+        <option value="$PROJECT_DIR$/customer-management/src/main/java/com/shanyu/service/impl/CustLostServiceImpl.java" />
+        <option value="$PROJECT_DIR$/customer-management/src/main/java/com/shanyu/controller/CustLostController.java" />
+        <option value="$PROJECT_DIR$/gateway/src/main/resources/static/html/~basd/dict.html" />
+        <option value="$PROJECT_DIR$/gateway/src/main/resources/static/html/~rept/lost.html" />
+        <option value="$PROJECT_DIR$/gateway/src/main/resources/static/html/script/common.js" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/shanyu/pojo/Storage.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/shanyu/pojo/StorageParam.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/shanyu/service/StorageService.java" />
+        <option value="$PROJECT_DIR$/base/src/main/java/com/shanyu/service/impl/StorageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/base/src/main/java/com/shanyu/mapper/StorageMapper.java" />
+        <option value="$PROJECT_DIR$/base/src/main/java/com/shanyu/controller/StorageController.java" />
+        <option value="$PROJECT_DIR$/gateway/src/main/resources/static/html/~basd/storage.html" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/shanyu/pojo/Contr.java" />
+        <option value="$PROJECT_DIR$/customer-management/src/main/java/com/shanyu/mapper/OrderLineMapper.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/shanyu/service/ContrService.java" />
+        <option value="$PROJECT_DIR$/rept/src/main/java/com/shanyu/service/impl/ContrServiceImpl.java" />
+        <option value="$PROJECT_DIR$/rept/src/main/java/com/shanyu/controller/ContrController.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/shanyu/pojo/ContrParam.java" />
+        <option value="$PROJECT_DIR$/gateway/src/main/resources/static/html/~rept/contr.html" />
+        <option value="$PROJECT_DIR$/rept/src/main/java/com/shanyu/mapper/ContrMapper.java" />
+        <option value="$PROJECT_DIR$/gateway/src/main/java/com/shanyu/filter/UserFilter.java" />
+        <option value="$PROJECT_DIR$/customer-management/src/main/java/com/shanyu/controller/CustActivityController.java" />
+        <option value="$PROJECT_DIR$/marketing-management/src/main/java/com/shanyu/controller/SalPlanController.java" />
+        <option value="$PROJECT_DIR$/marketing-management/src/main/java/com/shanyu/controller/SalChanceController.java" />
+        <option value="$PROJECT_DIR$/gateway/src/main/resources/static/html/~sale/dev.html" />
+        <option value="$PROJECT_DIR$/gateway/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/user/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/marketing-management/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/customer-management/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/base/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/rept/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/gateway/src/main/resources/static/html/~cust/lost/list.html" />
+        <option value="$PROJECT_DIR$/gateway/src/main/resources/static/html/~cust/lost/confirm.html" />
+        <option value="$PROJECT_DIR$/gateway/src/main/resources/static/html/~cust/cust/linkman_edit.html" />
+        <option value="$PROJECT_DIR$/gateway/src/main/resources/static/html/~cust/cust/linkman_add.html" />
+        <option value="$PROJECT_DIR$/user/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway/src/main/resources/static/html/css/style.css" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/Program Files/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="D:\Program Files\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="gateway" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="gateway" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Android</id>
+          </State>
+          <State>
+            <id>CorrectnessLintAndroid</id>
+          </State>
+          <State>
+            <id>Gradle</id>
+          </State>
+          <State>
+            <id>Kotlin</id>
+          </State>
+          <State>
+            <id>LintAndroid</id>
+          </State>
+          <State>
+            <id>Maven</id>
+          </State>
+          <State>
+            <id>OSGi</id>
+          </State>
+          <State>
+            <id>Probable bugsGradle</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Android</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <flattenPackages ProjectPane="false" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CRM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CRM" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544499580041" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DeptDemo" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Document\IntelliJ IDEA\CRM\gateway\src\main\resources\static" />
+      <recent name="D:\Document\IntelliJ IDEA\CRM\gateway\src\main\resources\static\html\script" />
+      <recent name="D:\Document\IntelliJ IDEA\CRM\gateway\src\main\resources\static\html" />
+      <recent name="D:\Document\IntelliJ IDEA\CRM\gateway\src\main\resources\static\js" />
+      <recent name="D:\Document\IntelliJ IDEA\CRM\eureka\src\main\resources\static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Document\IntelliJ IDEA\CRM\gateway\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+    <option name="contentProportion" value="0.2103825" />
+  </component>
+  <component name="RunManager" selected="Maven.gateway [package]">
+    <configuration name="base [package]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/base" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="customer-management [package]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/customer-management" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="gateway [package]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/gateway" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="marketing-management [package]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/marketing-management" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="rept [package]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/rept" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="BaseApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="base" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shanyu.BaseApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerManagementApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="customermanagement" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shanyu.CustomerManagementApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shanyu.EurekaApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shanyu.GatewayApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MarketingManagementApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="marketing-management" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shanyu.MarketingManagementApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReptApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="rept" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shanyu.ReptApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.shanyu.UserApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.EurekaApp" />
+      <item itemvalue="Spring Boot.UserApp" />
+      <item itemvalue="Spring Boot.BaseApp" />
+      <item itemvalue="Spring Boot.CustomerManagementApp" />
+      <item itemvalue="Spring Boot.MarketingManagementApp" />
+      <item itemvalue="Spring Boot.ReptApp" />
+      <item itemvalue="Spring Boot.GatewayApp" />
+      <item itemvalue="Maven.marketing-management [package]" />
+      <item itemvalue="Maven.customer-management [package]" />
+      <item itemvalue="Maven.base [package]" />
+      <item itemvalue="Maven.rept [package]" />
+      <item itemvalue="Maven.gateway [package]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Maven.gateway [package]" />
+        <item itemvalue="Maven.rept [package]" />
+        <item itemvalue="Maven.base [package]" />
+        <item itemvalue="Maven.customer-management [package]" />
+        <item itemvalue="Maven.marketing-management [package]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="11054e1a-1566-45e6-864c-6231001e86ff" name="Default Changelist" comment="" />
+      <created>1538190297590</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1538190297590</updated>
+      <workItem from="1538190301511" duration="674000" />
+      <workItem from="1538270208259" duration="20943000" />
+      <workItem from="1538447305058" duration="532000" />
+      <workItem from="1538447879876" duration="95000" />
+      <workItem from="1538448009257" duration="1111000" />
+      <workItem from="1538451670381" duration="1623000" />
+      <workItem from="1538460428441" duration="8631000" />
+      <workItem from="1538545737806" duration="26416000" />
+      <workItem from="1538630710077" duration="22476000" />
+      <workItem from="1538803667655" duration="5072000" />
+      <workItem from="1538878808998" duration="596000" />
+      <workItem from="1538911498144" duration="6212000" />
+      <workItem from="1538966245645" duration="3919000" />
+      <workItem from="1538976291230" duration="14021000" />
+      <workItem from="1539005424210" duration="5292000" />
+      <workItem from="1539047116432" duration="17174000" />
+      <workItem from="1539087559809" duration="10092000" />
+      <workItem from="1539151120554" duration="21429000" />
+      <workItem from="1539221324494" duration="18011000" />
+      <workItem from="1539307433066" duration="20310000" />
+      <workItem from="1539408214458" duration="3973000" />
+      <workItem from="1539567146809" duration="17686000" />
+      <workItem from="1539653950696" duration="17718000" />
+      <workItem from="1539755786794" duration="15658000" />
+      <workItem from="1539824642040" duration="19621000" />
+      <workItem from="1539911478879" duration="12865000" />
+      <workItem from="1540013038693" duration="321000" />
+      <workItem from="1540013492152" duration="5904000" />
+      <workItem from="1540092818659" duration="10620000" />
+      <workItem from="1540170696254" duration="20757000" />
+      <workItem from="1540209572143" duration="3009000" />
+      <workItem from="1540263577293" duration="10052000" />
+      <workItem from="1540344986280" duration="8210000" />
+      <workItem from="1540429953394" duration="1942000" />
+      <workItem from="1540432974096" duration="2057000" />
+      <workItem from="1540447100507" duration="9857000" />
+      <workItem from="1540472308595" duration="2059000" />
+      <workItem from="1540516844586" duration="6265000" />
+      <workItem from="1542191100774" duration="665000" />
+      <workItem from="1542248027667" duration="1376000" />
+      <workItem from="1544499045362" duration="988000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="376232000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2298177" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32967034" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.32967034" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5020107" side_tool="true" weight="0.24929178" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32967034" />
+      <window_info anchor="bottom" id="Run Dashboard" order="14" sideWeight="0.49798927" weight="0.3653846" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.3297587" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.3297587" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27345845" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32967034" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.32967034" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5020107" side_tool="true" weight="0.24929178" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32967034" />
+      <window_info anchor="bottom" id="Run Dashboard" order="14" sideWeight="0.49798927" weight="0.33569404" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.3297587" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.3297587" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/shanyu/pojo/Storage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/static/html/~basd/dict.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="94" column="9" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="94" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/shanyu/pojo/StorageParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base/src/main/java/com/shanyu/mapper/StorageMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/shanyu/service/StorageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base/src/main/java/com/shanyu/service/impl/StorageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base/src/main/java/com/shanyu/controller/StorageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/static/html/~basd/storage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="33" column="44" lean-forward="true" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-management/src/main/java/com/shanyu/mapper/OrderLineMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/shanyu/service/ContrService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rept/src/main/java/com/shanyu/service/impl/ContrServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/shanyu/pojo/ContrParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/shanyu/pojo/Contr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/static/html/~rept/contr.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="69" column="51" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/static/html/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/java/com/shanyu/filter/UserFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="37" column="73" selection-start-line="37" selection-start-column="73" selection-end-line="37" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/src/main/java/com/shanyu/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-management/src/main/java/com/shanyu/controller/CustActivityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/marketing-management/src/main/java/com/shanyu/mapper/SalPlanMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/marketing-management/src/main/java/com/shanyu/controller/SalPlanController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/static/html/~sale/dev.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="87" column="76" selection-start-line="87" selection-start-column="76" selection-end-line="87" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/marketing-management/src/main/java/com/shanyu/controller/SalChanceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1079">
+          <caret line="88" column="34" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-management/src/main/java/com/shanyu/controller/CustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-84">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base/src/main/java/com/shanyu/controller/DictController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-399">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rept/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rept/src/main/java/com/shanyu/mapper/ConsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rept/src/main/java/com/shanyu/service/impl/ConsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rept/src/main/java/com/shanyu/controller/ConsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rept/src/main/java/com/shanyu/mapper/ContrMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="15" column="57" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rept/src/main/java/com/shanyu/controller/ContrController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="33" column="22" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/static/html/~cust/lost/relay.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-667" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/static/html/~cust/lost/confirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="70" column="21" lean-forward="true" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/static/html/~cust/lost/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="52" column="72" lean-forward="true" selection-start-line="52" selection-start-column="72" selection-end-line="52" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/static/html/~cust/cust/linkman_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="56" column="48" lean-forward="true" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-management/src/main/java/com/shanyu/mapper/LinkmanMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/static/html/~cust/cust/linkman_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/static/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/marketing-management/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-management/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-63">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/static/html/css/menu.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/static/html/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3633">
+          <caret line="173" column="20" selection-start-line="173" selection-start-column="20" selection-end-line="173" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/resources/static/html/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MAVEN/com.shanyu:CRM:1.8">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MAVEN</ID>
+          <OriginalElement>com.shanyu:CRM:1.8</OriginalElement>
+          <nodes>
+            <node x="" y="">com.shanyu:CRM:1.8</node>
+            <node x="" y="">com.shanyu:common:jar:1.8</node>
+            <node x="" y="">com.shanyu:common:jar:1.8/com.auth0:java-jwt:jar:3.1.0</node>
+            <node x="" y="">com.shanyu:common:jar:1.8/com.auth0:java-jwt:jar:3.1.0/com.fasterxml.jackson.core:jackson-databind:jar:2.8.10</node>
+            <node x="" y="">com.shanyu:common:jar:1.8/com.auth0:java-jwt:jar:3.1.0/commons-codec:commons-codec:jar:1.10</node>
+            <node x="" y="">com.shanyu:common:jar:1.8/com.auth0:java-jwt:jar:3.1.0/org.bouncycastle:bcprov-jdk15on:jar:1.55</node>
+            <node x="" y="">com.shanyu:common:jar:1.8/org.apache.commons:commons-lang3:jar:3.3.2</node>
+            <node x="" y="">com.shanyu:common:jar:1.8/com.google.guava:guava:jar:18.0</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.9.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.9.RELEASE/ch.qos.logback:logback-classic:jar:1.1.11</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.9.RELEASE/ch.qos.logback:logback-classic:jar:1.1.11/ch.qos.logback:logback-core:jar:1.1.11</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.9.RELEASE/org.slf4j:jcl-over-slf4j:jar:1.7.25</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.9.RELEASE/org.slf4j:jul-to-slf4j:jar:1.7.25</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.9.RELEASE/org.slf4j:log4j-over-slf4j:jar:1.7.25</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.springframework:spring-core:jar:4.3.13.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.9.RELEASE/org.yaml:snakeyaml:jar:1.17</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.9.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.9.RELEASE/org.apache.tomcat.embed:tomcat-embed-core:jar:8.5.23</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.9.RELEASE/org.apache.tomcat.embed:tomcat-embed-core:jar:8.5.23/org.apache.tomcat:tomcat-annotations-api:jar:8.5.23</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.9.RELEASE/org.apache.tomcat.embed:tomcat-embed-el:jar:8.5.23</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.9.RELEASE/org.apache.tomcat.embed:tomcat-embed-websocket:jar:8.5.23</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.hibernate:hibernate-validator:jar:5.3.6.Final</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.hibernate:hibernate-validator:jar:5.3.6.Final/javax.validation:validation-api:jar:1.1.0.Final</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.hibernate:hibernate-validator:jar:5.3.6.Final/org.jboss.logging:jboss-logging:jar:3.3.1.Final</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.hibernate:hibernate-validator:jar:5.3.6.Final/com.fasterxml:classmate:jar:1.3.4</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework:spring-web:jar:4.3.13.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework:spring-web:jar:4.3.13.RELEASE/org.springframework:spring-aop:jar:4.3.13.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework:spring-web:jar:4.3.13.RELEASE/org.springframework:spring-beans:jar:4.3.13.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework:spring-web:jar:4.3.13.RELEASE/org.springframework:spring-context:jar:4.3.13.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework:spring-webmvc:jar:4.3.13.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-starter-web:jar:1.5.9.RELEASE/org.springframework:spring-webmvc:jar:4.3.13.RELEASE/org.springframework:spring-expression:jar:4.3.13.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.2.5.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.2.5.RELEASE/org.springframework.cloud:spring-cloud-context:jar:1.2.5.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.2.5.RELEASE/org.springframework.cloud:spring-cloud-context:jar:1.2.5.RELEASE/org.springframework.security:spring-security-crypto:jar:4.2.3.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.2.5.RELEASE/org.springframework.cloud:spring-cloud-commons:jar:1.2.5.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.2.5.RELEASE/org.springframework.security:spring-security-rsa:jar:1.0.3.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter:jar:1.2.5.RELEASE/org.springframework.security:spring-security-rsa:jar:1.0.3.RELEASE/org.bouncycastle:bcpkix-jdk15on:jar:1.55</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-netflix-core:jar:1.3.6.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-netflix-core:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot:jar:1.5.9.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-netflix-core:jar:1.3.6.RELEASE/org.springframework.boot:spring-boot-autoconfigure:jar:1.5.9.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-netflix-eureka-client:jar:1.3.6.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/org.codehaus.jettison:jettison:jar:1.3.7</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/org.codehaus.jettison:jettison:jar:1.3.7/stax:stax-api:jar:1.0.1</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/com.netflix.netflix-commons:netflix-infix:jar:0.3.0</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/com.netflix.netflix-commons:netflix-infix:jar:0.3.0/commons-jxpath:commons-jxpath:jar:1.3</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/com.netflix.netflix-commons:netflix-infix:jar:0.3.0/joda-time:joda-time:jar:2.9.9</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/com.netflix.netflix-commons:netflix-infix:jar:0.3.0/org.antlr:antlr-runtime:jar:3.4</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/com.netflix.netflix-commons:netflix-infix:jar:0.3.0/org.antlr:antlr-runtime:jar:3.4/org.antlr:stringtemplate:jar:3.2.1</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/com.netflix.netflix-commons:netflix-infix:jar:0.3.0/org.antlr:antlr-runtime:jar:3.4/antlr:antlr:jar:2.7.7</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/com.netflix.netflix-commons:netflix-infix:jar:0.3.0/com.google.code.gson:gson:jar:2.8.2</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0/org.apache.commons:commons-math:jar:2.2</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.archaius:archaius-core:jar:0.7.4</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/javax.ws.rs:jsr311-api:jar:1.1.1</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.servo:servo-core:jar:0.10.1</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.netflix.servo:servo-core:jar:0.10.1/com.netflix.servo:servo-internal:jar:0.10.1</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.sun.jersey:jersey-core:jar:1.19.1</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.sun.jersey:jersey-client:jar:1.19.1</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.sun.jersey.contribs:jersey-apache-client4:jar:1.19.1</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/org.apache.httpcomponents:httpclient:jar:4.5.3</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/org.apache.httpcomponents:httpclient:jar:4.5.3/org.apache.httpcomponents:httpcore:jar:4.4.8</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.google.inject:guice:jar:4.1.0</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.google.inject:guice:jar:4.1.0/javax.inject:javax.inject:jar:1</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.google.inject:guice:jar:4.1.0/aopalliance:aopalliance:jar:1.0</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.fasterxml.jackson.core:jackson-annotations:jar:2.8.0</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-client:jar:1.6.2/com.fasterxml.jackson.core:jackson-core:jar:2.8.10</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-core:jar:1.6.2</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-core:jar:1.6.2/org.codehaus.woodstox:woodstox-core-asl:jar:4.4.1</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-core:jar:1.6.2/org.codehaus.woodstox:woodstox-core-asl:jar:4.4.1/javax.xml.stream:stax-api:jar:1.0-2</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.eureka:eureka-core:jar:1.6.2/org.codehaus.woodstox:woodstox-core-asl:jar:4.4.1/org.codehaus.woodstox:stax2-api:jar:3.1.4</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.3.6.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.3.6.RELEASE/commons-configuration:commons-configuration:jar:1.8</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-archaius:jar:1.3.6.RELEASE/commons-configuration:commons-configuration:jar:1.8/commons-lang:commons-lang:jar:2.6</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.netflix.ribbon:ribbon-transport:jar:2.2.2</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.netflix.ribbon:ribbon-transport:jar:2.2.2/io.reactivex:rxnetty-contexts:jar:0.4.9</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.netflix.ribbon:ribbon-transport:jar:2.2.2/io.reactivex:rxnetty-servo:jar:0.4.9</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.netflix.hystrix:hystrix-core:jar:1.5.12</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/com.netflix.hystrix:hystrix-core:jar:1.5.12/org.hdrhistogram:HdrHistogram:jar:2.1.9</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-codec-http:jar:4.0.27.Final</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-codec-http:jar:4.0.27.Final/io.netty:netty-codec:jar:4.0.27.Final</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-codec-http:jar:4.0.27.Final/io.netty:netty-handler:jar:4.0.27.Final</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final/io.netty:netty-common:jar:4.0.27.Final</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final/io.netty:netty-buffer:jar:4.0.27.Final</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon:jar:2.2.2/io.reactivex:rxnetty:jar:0.4.9/io.netty:netty-transport-native-epoll:jar:4.0.27.Final/io.netty:netty-transport:jar:4.0.27.Final</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon-core:jar:2.2.2</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon-httpclient:jar:2.2.2</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon-httpclient:jar:2.2.2/commons-collections:commons-collections:jar:3.2.2</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon-httpclient:jar:2.2.2/com.netflix.netflix-commons:netflix-commons-util:jar:0.1.1</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon-loadbalancer:jar:2.2.2</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon-loadbalancer:jar:2.2.2/com.netflix.netflix-commons:netflix-statistics:jar:0.1.1</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/org.springframework.cloud:spring-cloud-starter-ribbon:jar:1.3.6.RELEASE/io.reactivex:rxjava:jar:1.1.10</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon-eureka:jar:2.2.2</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.netflix.ribbon:ribbon-eureka:jar:2.2.2/org.slf4j:slf4j-api:jar:1.7.25</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.thoughtworks.xstream:xstream:jar:1.4.9</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.thoughtworks.xstream:xstream:jar:1.4.9/xmlpull:xmlpull:jar:1.1.3.1</node>
+            <node x="" y="">org.springframework.cloud:spring-cloud-starter-eureka:jar:1.3.6.RELEASE/com.thoughtworks.xstream:xstream:jar:1.4.9/xpp3:xpp3_min:jar:1.1.4c</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.18831582298631008" x="3131.0" y="876.5" />
+          <SelectedNodes />
+          <Categories />
+          <VISIBILITY>All</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="46" column="43" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>eureka</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

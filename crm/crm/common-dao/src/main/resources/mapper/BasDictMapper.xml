@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bdqn.crm.mapper.BasDictMapper">
+
+    <select id="getBasDictByid" resultType="cn.bdqn.crm.pojo.BasDict" parameterType="int">
+        select
+                dict_id as dictId,
+                dict_type as dictType,
+                dict_item as dictItem,
+                dict_value as dictValue,
+                dict_is_editable as dictIsEditable
+        from bas_dict
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="dictId != null">
+                and dict_Id = #{dictId}
+            </if>
+        </trim>
+    </select>
+    <!--分页数量 -->
+    <select id="getTotalCountByMap" resultType="int" parameterType="java.util.Map">
+        SELECT COUNT(dict_id)  FROM bas_dict
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="dictId != null and dictId!=''">
+                and dict_id=#{dictId}
+            </if>
+            <if test="dictType != null and dictType!=''">
+                and dict_type LIKE CONCAT('%',#{dictType},'%')
+            </if>
+            <if test="dictItem != null and dictItem!=''">
+                and dict_item LIKE CONCAT('%',#{dictItem},'%')
+            </if>
+            <if test="dictValue != null and dictValue!=''">
+                and dict_value LIKE CONCAT('%',#{dictValue},'%')
+            </if>
+            <if test="dictIsEditable != null and dictIsEditable!=''">
+                and dict_is_editable=#{dictIsEditable}
+            </if>
+        </trim>
+
+    </select>
+    <!--分页数量 -->
+    <select id="getBasDictListByMap" resultType="cn.bdqn.crm.pojo.BasDict" parameterType="java.util.Map">
+        select
+                dict_id as dictId,
+                dict_type as dictType,
+                dict_item as dictItem,
+                dict_value as dictValue,
+                dict_is_editable as dictIsEditable
+        from bas_dict
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="dictId != null and dictId!=''">
+                    and dict_id=#{dictId}
+                </if>
+                <if test="dictType != null and dictType!=''">
+                    and dict_type LIKE CONCAT('%',#{dictType},'%')
+                </if>
+                <if test="dictItem != null and dictItem!=''">
+                    and dict_item LIKE CONCAT('%',#{dictItem},'%')
+                </if>
+                <if test="dictValue != null and dictValue!=''">
+                    and dict_value LIKE CONCAT('%',#{dictValue},'%')
+                </if>
+                <if test="dictIsEditable != null and dictIsEditable!=''">
+                    and dict_is_editable=#{dictIsEditable}
+                </if>
+        </trim>
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getBasDictCountByMap" resultType="Integer"  parameterType="java.util.Map">
+        select count(*) from bas_dict
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="dictId != null and dictId!=''">
+                    and dict_id=#{dictId}
+                </if>
+                <if test="dictType != null and dictType!=''">
+                    and dict_type=#{dictType}
+                </if>
+                <if test="dictItem != null and dictItem!=''">
+                    and dict_item=#{dictItem}
+                </if>
+                <if test="dictValue != null and dictValue!=''">
+                    and dict_value=#{dictValue}
+                </if>
+                <if test="dictIsEditable != null and dictIsEditable!=''">
+                    and dict_is_editable=#{dictIsEditable}
+                </if>
+        </trim>
+    </select>
+
+    <insert id="insertBasDict" parameterType="cn.bdqn.crm.pojo.BasDict">
+        insert into bas_dict(
+                        dict_id,
+                        dict_type,
+                        dict_item,
+                        dict_value,
+                        dict_is_editable)
+        values(
+                     #{dictId},
+                     #{dictType},
+                     #{dictItem},
+                     #{dictValue},
+                    #{dictIsEditable})
+    </insert>
+
+    <update id="updateBasDict" parameterType="cn.bdqn.crm.pojo.BasDict">
+        update bas_dict
+        <trim prefix="set" suffixOverrides="," suffix="where dictId = #{dictId}">
+                        <if test="dictId != null and dictId!=''">
+                            dict_id=#{dictId},
+                        </if>
+                        <if test="dictType != null and dictType!=''">
+                            dict_type=#{dictType},
+                        </if>
+                        <if test="dictItem != null and dictItem!=''">
+                            dict_item=#{dictItem},
+                        </if>
+                        <if test="dictValue != null and dictValue!=''">
+                            dict_value=#{dictValue},
+                        </if>
+                        <if test="dictIsEditable != null and dictIsEditable!=''">
+                            dict_is_editable=#{dictIsEditable}
+                        </if>
+        </trim>
+    </update>
+
+    <delete id="delBasDict" parameterType="int">
+        DELETE FROM bas_dict WHERE dict_Id = #{dictId}
+    </delete>
+
+</mapper>

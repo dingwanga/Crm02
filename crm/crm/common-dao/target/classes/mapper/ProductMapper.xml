@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bdqn.crm.mapper.ProductMapper">
+
+    <select id="getProductById" resultType="cn.bdqn.crm.pojo.Product">
+        select
+                prod_id as prodId,
+                prod_name as prodName,
+                prod_type as prodType,
+                prod_batch as prodBatch,
+                prod_unit as prodUnit,
+                prod_price as prodPrice,
+                prod_memo as prodMemo
+        from product
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="prodId != null">
+                and prod_id=#{prodId}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getProductListByMap" resultType="cn.bdqn.crm.pojo.Product" parameterType="java.util.Map">
+        select
+                prod_id as prodId,
+                prod_name as prodName,
+                prod_type as prodType,
+                prod_batch as prodBatch,
+                prod_unit as prodUnit,
+                prod_price as prodPrice,
+                prod_memo as prodMemo
+        from product
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="prodId != null and prodId!=''">
+                    and prod_id=#{prodId}
+                </if>
+                <if test="prodName != null and prodName!=''">
+                    and prod_name=#{prodName}
+                </if>
+                <if test="prodType != null and prodType!=''">
+                    and prod_type=#{prodType}
+                </if>
+                <if test="prodBatch != null and prodBatch!=''">
+                    and prod_batch=#{prodBatch}
+                </if>
+                <if test="prodUnit != null and prodUnit!=''">
+                    and prod_unit=#{prodUnit}
+                </if>
+                <if test="prodPrice != null and prodPrice!=''">
+                    and prod_price=#{prodPrice}
+                </if>
+                <if test="prodMemo != null and prodMemo!=''">
+                    and prod_memo=#{prodMemo}
+                </if>
+        </trim>
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getProductCountByMap" resultType="Integer"  parameterType="java.util.Map">
+        select count(*) from product
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="prodId != null and prodId!=''">
+                    and prod_id=#{prodId}
+                </if>
+                <if test="prodName != null and prodName!=''">
+                    and prod_name=#{prodName}
+                </if>
+                <if test="prodType != null and prodType!=''">
+                    and prod_type=#{prodType}
+                </if>
+                <if test="prodBatch != null and prodBatch!=''">
+                    and prod_batch=#{prodBatch}
+                </if>
+                <if test="prodUnit != null and prodUnit!=''">
+                    and prod_unit=#{prodUnit}
+                </if>
+                <if test="prodPrice != null and prodPrice!=''">
+                    and prod_price=#{prodPrice}
+                </if>
+                <if test="prodMemo != null and prodMemo!=''">
+                    and prod_memo=#{prodMemo}
+                </if>
+        </trim>
+    </select>
+
+    <insert id="insertProduct" parameterType="cn.bdqn.crm.pojo.Product">
+        insert into product(
+                        prod_id,
+                        prod_name,
+                        prod_type,
+                        prod_batch,
+                        prod_unit,
+                        prod_price,
+                        prod_memo)
+        values(
+                     #{prodId},
+                     #{prodName},
+                     #{prodType},
+                     #{prodBatch},
+                     #{prodUnit},
+                     #{prodPrice},
+                    #{prodMemo})
+    </insert>
+
+    <update id="updateProduct" parameterType="cn.bdqn.crm.pojo.Product">
+        update product
+        <trim prefix="set" suffixOverrides="," suffix="where prodId=#{prodId}">
+                        <if test="prodId != null and prodId!=''">
+                            prod_id=#{prodId},
+                        </if>
+                        <if test="prodName != null and prodName!=''">
+                            prod_name=#{prodName},
+                        </if>
+                        <if test="prodType != null and prodType!=''">
+                            prod_type=#{prodType},
+                        </if>
+                        <if test="prodBatch != null and prodBatch!=''">
+                            prod_batch=#{prodBatch},
+                        </if>
+                        <if test="prodUnit != null and prodUnit!=''">
+                            prod_unit=#{prodUnit},
+                        </if>
+                        <if test="prodPrice != null and prodPrice!=''">
+                            prod_price=#{prodPrice},
+                        </if>
+                        <if test="prodMemo != null and prodMemo!=''">
+                            prod_memo=#{prodMemo}
+                        </if>
+        </trim>
+    </update>
+
+    <delete id="delProduct" parameterType="int">
+        DELETE FROM product WHERE prod_id=#{prodId}
+    </delete>
+
+</mapper>

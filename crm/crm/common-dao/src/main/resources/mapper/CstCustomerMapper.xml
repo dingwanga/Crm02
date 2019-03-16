@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bdqn.crm.mapper.CstCustomerMapper">
+
+    <select id="getCstCustomerById" resultType="cn.bdqn.crm.pojo.CstCustomer">
+        select
+                cust_no as custNo,
+                cust_name as custName,
+                cust_region as custRegion,
+                cust_manager_id as custManagerId,
+                cust_manager_name as custManagerName,
+                cust_level as custLevel,
+                cust_level_label as custLevelLabel,
+                cust_satisfy as custSatisfy,
+                cust_credit as custCredit,
+                cust_addr as custAddr,
+                cust_zip as custZip,
+                cust_tel as custTel,
+                cust_fax as custFax,
+                cust_website as custWebsite,
+                cust_licence_no as custLicenceNo,
+                cust_chieftain as custChieftain,
+                cust_bankroll as custBankroll,
+                cust_turnover as custTurnover,
+                cust_bank as custBank,
+                cust_bank_account as custBankAccount,
+                cust_local_tax_no as custLocalTaxNo,
+                cust_national_tax_no as custNationalTaxNo,
+                cust_status as custStatus
+        from cst_customer
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="custNo!=null">
+                and cust_no=#{custNo}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getCstCustomerListByMap" resultType="cn.bdqn.crm.pojo.CstCustomer" parameterType="java.util.Map">
+        select
+                cust_no as custNo,
+                cust_name as custName,
+                cust_region as custRegion,
+                cust_manager_id as custManagerId,
+                cust_manager_name as custManagerName,
+                cust_level as custLevel,
+                cust_level_label as custLevelLabel,
+                cust_satisfy as custSatisfy,
+                cust_credit as custCredit,
+                cust_addr as custAddr,
+                cust_zip as custZip,
+                cust_tel as custTel,
+                cust_fax as custFax,
+                cust_website as custWebsite,
+                cust_licence_no as custLicenceNo,
+                cust_chieftain as custChieftain,
+                cust_bankroll as custBankroll,
+                cust_turnover as custTurnover,
+                cust_bank as custBank,
+                cust_bank_account as custBankAccount,
+                cust_local_tax_no as custLocalTaxNo,
+                cust_national_tax_no as custNationalTaxNo,
+                cust_status as custStatus
+        from cst_customer
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="custNo != null and custNo!=''">
+                    and cust_no=#{custNo}
+                </if>
+                <if test="custName != null and custName!=''">
+                    and cust_name=#{custName}
+                </if>
+                <if test="custRegion != null and custRegion!=''">
+                    and cust_region=#{custRegion}
+                </if>
+                <if test="custManagerId != null and custManagerId!=''">
+                    and cust_manager_id=#{custManagerId}
+                </if>
+                <if test="custManagerName != null and custManagerName!=''">
+                    and cust_manager_name=#{custManagerName}
+                </if>
+                <if test="custLevel != null and custLevel!=''">
+                    and cust_level=#{custLevel}
+                </if>
+                <if test="custLevelLabel != null and custLevelLabel!=''">
+                    and cust_level_label=#{custLevelLabel}
+                </if>
+                <if test="custSatisfy != null and custSatisfy!=''">
+                    and cust_satisfy=#{custSatisfy}
+                </if>
+                <if test="custCredit != null and custCredit!=''">
+                    and cust_credit=#{custCredit}
+                </if>
+                <if test="custAddr != null and custAddr!=''">
+                    and cust_addr=#{custAddr}
+                </if>
+                <if test="custZip != null and custZip!=''">
+                    and cust_zip=#{custZip}
+                </if>
+                <if test="custTel != null and custTel!=''">
+                    and cust_tel=#{custTel}
+                </if>
+                <if test="custFax != null and custFax!=''">
+                    and cust_fax=#{custFax}
+                </if>
+                <if test="custWebsite != null and custWebsite!=''">
+                    and cust_website=#{custWebsite}
+                </if>
+                <if test="custLicenceNo != null and custLicenceNo!=''">
+                    and cust_licence_no=#{custLicenceNo}
+                </if>
+                <if test="custChieftain != null and custChieftain!=''">
+                    and cust_chieftain=#{custChieftain}
+                </if>
+                <if test="custBankroll != null and custBankroll!=''">
+                    and cust_bankroll=#{custBankroll}
+                </if>
+                <if test="custTurnover != null and custTurnover!=''">
+                    and cust_turnover=#{custTurnover}
+                </if>
+                <if test="custBank != null and custBank!=''">
+                    and cust_bank=#{custBank}
+                </if>
+                <if test="custBankAccount != null and custBankAccount!=''">
+                    and cust_bank_account=#{custBankAccount}
+                </if>
+                <if test="custLocalTaxNo != null and custLocalTaxNo!=''">
+                    and cust_local_tax_no=#{custLocalTaxNo}
+                </if>
+                <if test="custNationalTaxNo != null and custNationalTaxNo!=''">
+                    and cust_national_tax_no=#{custNationalTaxNo}
+                </if>
+                <if test="custStatus != null and custStatus!=''">
+                    and cust_status=#{custStatus}
+                </if>
+        </trim>
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getCstCustomerCountByMap" resultType="Integer"  parameterType="java.util.Map">
+        select count(*) from cst_customer
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="custNo != null and custNo!=''">
+                    and cust_no=#{custNo}
+                </if>
+                <if test="custName != null and custName!=''">
+                    and cust_name=#{custName}
+                </if>
+                <if test="custRegion != null and custRegion!=''">
+                    and cust_region=#{custRegion}
+                </if>
+                <if test="custManagerId != null and custManagerId!=''">
+                    and cust_manager_id=#{custManagerId}
+                </if>
+                <if test="custManagerName != null and custManagerName!=''">
+                    and cust_manager_name=#{custManagerName}
+                </if>
+                <if test="custLevel != null and custLevel!=''">
+                    and cust_level=#{custLevel}
+                </if>
+                <if test="custLevelLabel != null and custLevelLabel!=''">
+                    and cust_level_label=#{custLevelLabel}
+                </if>
+                <if test="custSatisfy != null and custSatisfy!=''">
+                    and cust_satisfy=#{custSatisfy}
+                </if>
+                <if test="custCredit != null and custCredit!=''">
+                    and cust_credit=#{custCredit}
+                </if>
+                <if test="custAddr != null and custAddr!=''">
+                    and cust_addr=#{custAddr}
+                </if>
+                <if test="custZip != null and custZip!=''">
+                    and cust_zip=#{custZip}
+                </if>
+                <if test="custTel != null and custTel!=''">
+                    and cust_tel=#{custTel}
+                </if>
+                <if test="custFax != null and custFax!=''">
+                    and cust_fax=#{custFax}
+                </if>
+                <if test="custWebsite != null and custWebsite!=''">
+                    and cust_website=#{custWebsite}
+                </if>
+                <if test="custLicenceNo != null and custLicenceNo!=''">
+                    and cust_licence_no=#{custLicenceNo}
+                </if>
+                <if test="custChieftain != null and custChieftain!=''">
+                    and cust_chieftain=#{custChieftain}
+                </if>
+                <if test="custBankroll != null and custBankroll!=''">
+                    and cust_bankroll=#{custBankroll}
+                </if>
+                <if test="custTurnover != null and custTurnover!=''">
+                    and cust_turnover=#{custTurnover}
+                </if>
+                <if test="custBank != null and custBank!=''">
+                    and cust_bank=#{custBank}
+                </if>
+                <if test="custBankAccount != null and custBankAccount!=''">
+                    and cust_bank_account=#{custBankAccount}
+                </if>
+                <if test="custLocalTaxNo != null and custLocalTaxNo!=''">
+                    and cust_local_tax_no=#{custLocalTaxNo}
+                </if>
+                <if test="custNationalTaxNo != null and custNationalTaxNo!=''">
+                    and cust_national_tax_no=#{custNationalTaxNo}
+                </if>
+                <if test="custStatus != null and custStatus!=''">
+                    and cust_status=#{custStatus}
+                </if>
+        </trim>
+    </select>
+
+    <insert id="insertCstCustomer" parameterType="cn.bdqn.crm.pojo.CstCustomer">
+        insert into cst_customer(
+                        cust_no,
+                        cust_name,
+                        cust_region,
+                        cust_manager_id,
+                        cust_manager_name,
+                        cust_level,
+                        cust_level_label,
+                        cust_satisfy,
+                        cust_credit,
+                        cust_addr,
+                        cust_zip,
+                        cust_tel,
+                        cust_fax,
+                        cust_website,
+                        cust_licence_no,
+                        cust_chieftain,
+                        cust_bankroll,
+                        cust_turnover,
+                        cust_bank,
+                        cust_bank_account,
+                        cust_local_tax_no,
+                        cust_national_tax_no,
+                        cust_status)
+        values(
+                     #{custNo},
+                     #{custName},
+                     #{custRegion},
+                     #{custManagerId},
+                     #{custManagerName},
+                     #{custLevel},
+                     #{custLevelLabel},
+                     #{custSatisfy},
+                     #{custCredit},
+                     #{custAddr},
+                     #{custZip},
+                     #{custTel},
+                     #{custFax},
+                     #{custWebsite},
+                     #{custLicenceNo},
+                     #{custChieftain},
+                     #{custBankroll},
+                     #{custTurnover},
+                     #{custBank},
+                     #{custBankAccount},
+                     #{custLocalTaxNo},
+                     #{custNationalTaxNo},
+                    #{custStatus})
+    </insert>
+
+    <update id="updateCstCustomer" parameterType="cn.bdqn.crm.pojo.CstCustomer">
+        update cst_customer
+        <trim prefix="set" suffixOverrides="," suffix="where custNo=#{custNo}">
+                        <if test="custNo != null and custNo!=''">
+                            cust_no=#{custNo},
+                        </if>
+                        <if test="custName != null and custName!=''">
+                            cust_name=#{custName},
+                        </if>
+                        <if test="custRegion != null and custRegion!=''">
+                            cust_region=#{custRegion},
+                        </if>
+                        <if test="custManagerId != null and custManagerId!=''">
+                            cust_manager_id=#{custManagerId},
+                        </if>
+                        <if test="custManagerName != null and custManagerName!=''">
+                            cust_manager_name=#{custManagerName},
+                        </if>
+                        <if test="custLevel != null and custLevel!=''">
+                            cust_level=#{custLevel},
+                        </if>
+                        <if test="custLevelLabel != null and custLevelLabel!=''">
+                            cust_level_label=#{custLevelLabel},
+                        </if>
+                        <if test="custSatisfy != null and custSatisfy!=''">
+                            cust_satisfy=#{custSatisfy},
+                        </if>
+                        <if test="custCredit != null and custCredit!=''">
+                            cust_credit=#{custCredit},
+                        </if>
+                        <if test="custAddr != null and custAddr!=''">
+                            cust_addr=#{custAddr},
+                        </if>
+                        <if test="custZip != null and custZip!=''">
+                            cust_zip=#{custZip},
+                        </if>
+                        <if test="custTel != null and custTel!=''">
+                            cust_tel=#{custTel},
+                        </if>
+                        <if test="custFax != null and custFax!=''">
+                            cust_fax=#{custFax},
+                        </if>
+                        <if test="custWebsite != null and custWebsite!=''">
+                            cust_website=#{custWebsite},
+                        </if>
+                        <if test="custLicenceNo != null and custLicenceNo!=''">
+                            cust_licence_no=#{custLicenceNo},
+                        </if>
+                        <if test="custChieftain != null and custChieftain!=''">
+                            cust_chieftain=#{custChieftain},
+                        </if>
+                        <if test="custBankroll != null and custBankroll!=''">
+                            cust_bankroll=#{custBankroll},
+                        </if>
+                        <if test="custTurnover != null and custTurnover!=''">
+                            cust_turnover=#{custTurnover},
+                        </if>
+                        <if test="custBank != null and custBank!=''">
+                            cust_bank=#{custBank},
+                        </if>
+                        <if test="custBankAccount != null and custBankAccount!=''">
+                            cust_bank_account=#{custBankAccount},
+                        </if>
+                        <if test="custLocalTaxNo != null and custLocalTaxNo!=''">
+                            cust_local_tax_no=#{custLocalTaxNo},
+                        </if>
+                        <if test="custNationalTaxNo != null and custNationalTaxNo!=''">
+                            cust_national_tax_no=#{custNationalTaxNo},
+                        </if>
+                        <if test="custStatus != null and custStatus!=''">
+                            cust_status=#{custStatus}
+                        </if>
+        </trim>
+    </update>
+
+    <delete id="delCstCustomer" parameterType="string">
+        DELETE FROM cst_customer WHERE cust_No=#{custNo}
+    </delete>
+
+</mapper>

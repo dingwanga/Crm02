@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/ydxsyesl/env-project.git
+          username: yd_xs_yesl@163.com
+          password: yun123456
+          search-paths:
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  #http://localhost:7720/bus/refresh 实现消息总线自动刷新
+eureka:
+  instance:
+    hostname: ${spring.cloud.client.ipAddress}
+  client:
+    service-url:
+      defaultZone: http://root:123456@localhost:9001/eureka
+
+
+
+management:
+  security:
+    enabled: false
+server:
+  port: 9004

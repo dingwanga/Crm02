@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bdqn.crm.mapper.CstActivityMapper">
+
+    <select id="getCstActivityById" resultType="cn.bdqn.crm.pojo.CstActivity">
+        select
+                atv_id as atvId,
+                atv_cust_no as atvCustNo,
+                atv_cust_name as atvCustName,
+                atv_date as atvDate,
+                atv_place as atvPlace,
+                atv_title as atvTitle,
+                atv_desc as atvDesc
+        from cst_activity
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="atvId != null">
+                and atv_id=#{atvId}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getCstActivityListByMap" resultType="cn.bdqn.crm.pojo.CstActivity" parameterType="java.util.Map">
+        select
+                atv_id as atvId,
+                atv_cust_no as atvCustNo,
+                atv_cust_name as atvCustName,
+                atv_date as atvDate,
+                atv_place as atvPlace,
+                atv_title as atvTitle,
+                atv_desc as atvDesc
+        from cst_activity
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="atvId != null and atvId!=''">
+                    and atv_id=#{atvId}
+                </if>
+                <if test="atvCustNo != null and atvCustNo!=''">
+                    and atv_cust_no=#{atvCustNo}
+                </if>
+                <if test="atvCustName != null and atvCustName!=''">
+                    and atv_cust_name=#{atvCustName}
+                </if>
+                <if test="atvDate != null and atvDate!=''">
+                    and atv_date=#{atvDate}
+                </if>
+                <if test="atvPlace != null and atvPlace!=''">
+                    and atv_place=#{atvPlace}
+                </if>
+                <if test="atvTitle != null and atvTitle!=''">
+                    and atv_title=#{atvTitle}
+                </if>
+                <if test="atvDesc != null and atvDesc!=''">
+                    and atv_desc=#{atvDesc}
+                </if>
+        </trim>
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getCstActivityCountByMap" resultType="Integer"  parameterType="java.util.Map">
+        select count(*) from cst_activity
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="atvId != null and atvId!=''">
+                    and atv_id=#{atvId}
+                </if>
+                <if test="atvCustNo != null and atvCustNo!=''">
+                    and atv_cust_no=#{atvCustNo}
+                </if>
+                <if test="atvCustName != null and atvCustName!=''">
+                    and atv_cust_name=#{atvCustName}
+                </if>
+                <if test="atvDate != null and atvDate!=''">
+                    and atv_date=#{atvDate}
+                </if>
+                <if test="atvPlace != null and atvPlace!=''">
+                    and atv_place=#{atvPlace}
+                </if>
+                <if test="atvTitle != null and atvTitle!=''">
+                    and atv_title=#{atvTitle}
+                </if>
+                <if test="atvDesc != null and atvDesc!=''">
+                    and atv_desc=#{atvDesc}
+                </if>
+        </trim>
+    </select>
+
+    <insert id="insertCstActivity" parameterType="cn.bdqn.crm.pojo.CstActivity">
+        insert into cst_activity(
+                        atv_id,
+                        atv_cust_no,
+                        atv_cust_name,
+                        atv_date,
+                        atv_place,
+                        atv_title,
+                        atv_desc)
+        values(
+                     #{atvId},
+                     #{atvCustNo},
+                     #{atvCustName},
+                     #{atvDate},
+                     #{atvPlace},
+                     #{atvTitle},
+                    #{atvDesc})
+    </insert>
+
+    <update id="updateCstActivity" parameterType="cn.bdqn.crm.pojo.CstActivity">
+        update cst_activity
+        <trim prefix="set" suffixOverrides="," suffix="where atvId=#{atvId}">
+                        <if test="atvId != null and atvId!=''">
+                            atv_id=#{atvId},
+                        </if>
+                        <if test="atvCustNo != null and atvCustNo!=''">
+                            atv_cust_no=#{atvCustNo},
+                        </if>
+                        <if test="atvCustName != null and atvCustName!=''">
+                            atv_cust_name=#{atvCustName},
+                        </if>
+                        <if test="atvDate != null and atvDate!=''">
+                            atv_date=#{atvDate},
+                        </if>
+                        <if test="atvPlace != null and atvPlace!=''">
+                            atv_place=#{atvPlace},
+                        </if>
+                        <if test="atvTitle != null and atvTitle!=''">
+                            atv_title=#{atvTitle},
+                        </if>
+                        <if test="atvDesc != null and atvDesc!=''">
+                            atv_desc=#{atvDesc}
+                        </if>
+        </trim>
+    </update>
+
+    <delete id="delCstActivity" parameterType="int">
+        DELETE FROM cst_activity WHERE atv_Id=#{atvId}
+    </delete>
+
+</mapper>

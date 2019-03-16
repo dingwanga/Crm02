@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>客户流失管理 - 确认流失</title>
+    <meta charset="UTF-8">
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <script src="../../script/common.js"></script>
+    <script src="../../../js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function () {
+            var id = localStorage.getItem("id");
+            $.ajax({
+                url: "../../../cust/lost/" + id,
+                type: "get",
+                success: function (obj) {
+                    if (obj.code === 0) {
+                        var lost = obj.result;
+                        $("#id").html(id);
+                        $("#cust_name").html(lost.lst_cust_name);
+                        $("#manager_name").html(lost.lst_manager_name);
+                        $("#last_date").html(formatDate(lost.lst_last_order));
+                        $("#delay").html(lost.lst_delay);
+                        $("#cust_no").val(lost.lst_cust_no);
+                    } else {
+                        alert(obj.msg);
+                    }
+                }
+            });
+        });
+
+        function confirm() {
+            var id = $("#id").html();
+            var reason = $("#reason").val();
+            var cust_no = $("#cust_no").val();
+            var data = '{lst_id:"' + id + '",lst_reason:"' + reason + '",lst_cust_no:"' + cust_no + '"}';
+            $.ajax({
+                url: "../../../cust/confirmLost",
+                type: "put",
+                data: data,
+                dataType: "json",
+                contentType: "application/json;charset=utf-8",
+                success: function (obj) {
+                    if (obj.code === 0) {
+                        alert("保存成功！");
+                        to("list.html");
+                    } else {
+                        alert(obj.msg);
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div class="page_title">客户流失管理&nbsp;&nbsp;&gt;&nbsp;&nbsp;确认流失</div>
+<div class="button_bar">
+    <button class="common_button" onclick="help('确认流失');">帮助</button>
+    <button class="common_button" onclick="back();">返回</button>
+    <button class="common_button" onclick="to('relay.html');">暂缓流失</button>
+    <button class="common_button" onclick="confirm('list.html');">保存</button>
+</div>
+<table class="query_form_table">
+    <input type="hidden" id="cust_no">
+    <tr>
+        <th>编号</th>
+        <td id="id"></td>
+        <th>客户</th>
+        <td id="cust_name"></td>
+    </tr>
+    <tr>
+        <th>客户经理</th>
+        <td id="manager_name"></td>
+        <th>上次下单时间</th>
+        <td id="last_date"></td>
+    </tr>
+    <tr>
+        <th>暂缓措施</th>
+        <td colspan="3" id="delay"></td>
+    </tr>
+    <tr>
+        <th>流失原因</th>
+        <td colspan="3">
+            <textarea rows="6" cols="50" id="reason"></textarea><span class="red_star">*</span></td>
+    </tr>
+</table>
+</body>
+</html>

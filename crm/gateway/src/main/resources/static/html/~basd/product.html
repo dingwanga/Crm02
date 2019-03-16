@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>产品查询</title>
+    <meta charset="UTF-8">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <script src="../script/common.js"></script>
+    <script src="../../js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                url: "../../base/products",
+                type: "get",
+                success: function (obj) {
+                    $("#name").val(obj.result.pro_name);
+                    $("#type").val(obj.result.pro_type);
+                    $("#batch").val(obj.result.pro_batch);
+                    fillTable(obj.result);
+                }
+            });
+        });
+
+        function fillTable(param) {
+            var table = $("#table");
+            table.empty();
+            var str = '<tr><th width="5%">编号</th>' +
+                '<th width="25%">名称</th>' +
+                '<th width="20%">型号</th>' +
+                '<th width="20%">等级/批次</th>' +
+                '<th width="5%">单位</th>' +
+                '<th width="10%">单价（元）</th>' +
+                '<th width="15%">备注</th></tr>';
+            $.each(param.list, function (i, product) {
+                str += '<tr><td class="list_data_number">' + product.pro_id + '</td>' +
+                    '<td class="list_data_ltext">' + product.pro_name + '</td>' +
+                    '<td class="list_data_text">' + product.pro_type + '</td>' +
+                    '<td class="list_data_text">' + product.pro_batch + '</td>' +
+                    '<td class="list_data_text">' + product.pro_unit + '</td>' +
+                    '<td class="list_data_number">' + product.pro_price + '</td>' +
+                    '<td class="list_data_ltext">' + product.pro_memo + '</td></tr>';
+            });
+            str += "<tr><th colspan='100' class='pager'>" +
+                "<div class='pager'>" +
+                "共" + param.count + "条记录&nbsp;&nbsp;" +
+                "每页<input type='number' id='pageSize' value='" + param.pageSize + "' style='width:40px''/>条&nbsp;&nbsp;" +
+                "第" + param.pageNo + "页/共" + param.pageCount + "页&nbsp;&nbsp;" +
+                "<a href='javascript:search(1)'>第一页</a>&nbsp;" +
+                "<a href='javascript:search(" + (param.pageNo - 1) + ")'>上一页</a>&nbsp;&nbsp;" +
+                "<a href='javascript:search(" + (param.pageNo + 1) + ")'>下一页</a>&nbsp;&nbsp;" +
+                "<a href='javascript:search(" + param.pageCount + ")'>最后一页</a>&nbsp;&nbsp;" +
+                "转到<input type='number' min='1' id='pageNo' value='" + param.pageNo + "' style='width:40px'/>页&nbsp;&nbsp;" +
+                "<button onclick='go();'>GO</button>" +
+                "</div></th></tr>";
+            table.append(str);
+        }
+
+        function go() {
+            var pageNo = $("#pageNo").val();
+            search(pageNo);
+        }
+
+        function search(pageNo) {
+            var pageSize = $("#pageSize").val();
+            var data = "pageNo=" + pageNo + "&pageSize=" + pageSize;
+            var name = $("#name").val();
+            if (name !== '') {
+                data += "&pro_name=" + name;
+            }
+            var type = $("#type").val();
+            if (type !== "") {
+                data += "&pro_type=" + type;
+            }
+            var batch = $("#batch").val();
+            if (batch !== "") {
+                data += "&pro_batch=" + batch;
+            }
+            $.ajax({
+                url: "../../base/products",
+                data: data,
+                type: "get",
+                success: function (obj) {
+                    fillTable(obj.result);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div class="page_title">产品查询</div>
+<div class="button_bar">
+    <button class="common_button" onclick="help('产品查询');">帮助</button>
+    <button class="common_button" onclick="search(1);">查询</button>
+</div>
+<table class="query_form_table">
+    <tr>
+        <th>名称</th>
+        <td><input type="text" id="name"/></td>
+        <th>型号</th>
+        <td><input type="text" id="type"/></td>
+        <th>批次</th>
+        <td><input type="text" id="batch"/></td>
+    </tr>
+</table>
+<br/>
+<table class="data_list_table" id="table">
+</table>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.bdqn.crm.mapper.StorageMapper">
+
+    <select id="getStorageById" resultType="cn.bdqn.crm.pojo.Storage">
+        select
+                stk_id as stkId,
+                stk_prod_id as stkProdId,
+                stk_warehouse as stkWarehouse,
+                stk_ware as stkWare,
+                stk_count as stkCount,
+                stk_memo as stkMemo
+        from storage
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="stkId != null">
+                and stk_id=#{stkId}
+            </if>
+        </trim>
+    </select>
+
+    <select id="getStorageListByMap" resultType="cn.bdqn.crm.pojo.Storage" parameterType="java.util.Map">
+        select
+                stk_id as stkId,
+                stk_prod_id as stkProdId,
+                stk_warehouse as stkWarehouse,
+                stk_ware as stkWare,
+                stk_count as stkCount,
+                stk_memo as stkMemo
+        from storage
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="stkId != null and stkId!=''">
+                    and stk_id=#{stkId}
+                </if>
+                <if test="stkProdId != null and stkProdId!=''">
+                    and stk_prod_id=#{stkProdId}
+                </if>
+                <if test="stkWarehouse != null and stkWarehouse!=''">
+                    and stk_warehouse=#{stkWarehouse}
+                </if>
+                <if test="stkWare != null and stkWare!=''">
+                    and stk_ware=#{stkWare}
+                </if>
+                <if test="stkCount != null and stkCount!=''">
+                    and stk_count=#{stkCount}
+                </if>
+                <if test="stkMemo != null and stkMemo!=''">
+                    and stk_memo=#{stkMemo}
+                </if>
+        </trim>
+        <if test="beginPos != null and pageSize != null ">
+            limit #{beginPos},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getStorageCountByMap" resultType="Integer"  parameterType="java.util.Map">
+        select count(*) from storage
+        <trim prefix="where" prefixOverrides="and | or">
+                <if test="stkId != null and stkId!=''">
+                    and stk_id=#{stkId}
+                </if>
+                <if test="stkProdId != null and stkProdId!=''">
+                    and stk_prod_id=#{stkProdId}
+                </if>
+                <if test="stkWarehouse != null and stkWarehouse!=''">
+                    and stk_warehouse=#{stkWarehouse}
+                </if>
+                <if test="stkWare != null and stkWare!=''">
+                    and stk_ware=#{stkWare}
+                </if>
+                <if test="stkCount != null and stkCount!=''">
+                    and stk_count=#{stkCount}
+                </if>
+                <if test="stkMemo != null and stkMemo!=''">
+                    and stk_memo=#{stkMemo}
+                </if>
+        </trim>
+    </select>
+
+    <insert id="insertStorage" parameterType="cn.bdqn.crm.pojo.Storage">
+        insert into storage(
+                        stk_id,
+                        stk_prod_id,
+                        stk_warehouse,
+                        stk_ware,
+                        stk_count,
+                        stk_memo)
+        values(
+                     #{stkId},
+                     #{stkProdId},
+                     #{stkWarehouse},
+                     #{stkWare},
+                     #{stkCount},
+                    #{stkMemo})
+    </insert>
+
+    <update id="updateStorage" parameterType="cn.bdqn.crm.pojo.Storage">
+        update storage
+        <trim prefix="set" suffixOverrides="," suffix="where stkId=#{stkId}">
+                        <if test="stkId != null and stkId!=''">
+                            stk_id=#{stkId},
+                        </if>
+                        <if test="stkProdId != null and stkProdId!=''">
+                            stk_prod_id=#{stkProdId},
+                        </if>
+                        <if test="stkWarehouse != null and stkWarehouse!=''">
+                            stk_warehouse=#{stkWarehouse},
+                        </if>
+                        <if test="stkWare != null and stkWare!=''">
+                            stk_ware=#{stkWare},
+                        </if>
+                        <if test="stkCount != null and stkCount!=''">
+                            stk_count=#{stkCount},
+                        </if>
+                        <if test="stkMemo != null and stkMemo!=''">
+                            stk_memo=#{stkMemo}
+                        </if>
+        </trim>
+    </update>
+
+    <delete id="delStorage" parameterType="int">
+        DELETE FROM storage WHERE stk_id=#{stkId}
+    </delete>
+
+</mapper>

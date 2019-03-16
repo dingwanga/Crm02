@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>客户信息管理 - 客户信息 - 联系人 - 新建联系人</title>
+    <meta charset="UTF-8">
+    <link href="../../css/style.css" rel="stylesheet" type="text/css">
+    <script src="../../script/common.js"></script>
+    <script src="../../../js/jquery-1.8.3.min.js"></script>
+    <script>
+        function addLinkman() {
+            var data = getData();
+            if (data !== false) {
+                $.ajax({
+                    url: "../../../cust/linkman",
+                    type: "post",
+                    data: data,
+                    dataType: "json",
+                    contentType: "application/json;charset=utf-8",
+                    success: function (obj) {
+                        if (obj.code === 0) {
+                            alert("新建成功！");
+                            to("linkman.html");
+                        } else {
+                            alert(obj.msg);
+                        }
+                    }
+                });
+            }
+        }
+
+        function getData() {
+            var cust_no = localStorage.getItem("cust_no");
+            var name = $("#name").val();
+            if (name == '') {
+                alert("请输入姓名！");
+                return false;
+            }
+            var sex = $("input[type='radio']:checked").val();
+            var tel = $("#tel").val();
+            if (tel == '') {
+                alert("请输入办公电话！");
+                return false;
+            }
+            var position = $("#position").val();
+            var mobile = $("#mobile").val();
+            var memo = $("#memo").val();
+            return '{lkm_cust_no:"' + cust_no + '",lkm_name:"' + name + '",lkm_sex:"' + sex + '",lkm_tel:"'
+                + tel + '",lkm_position:"' + position + '",,lkm_mobile:"' + mobile + '",lkm_memo:"' + memo + '"}';
+        }
+    </script>
+</head>
+<body>
+<div class="page_title">客户信息管理 > 客户信息 > 联系人 > 新建联系人</div>
+<div class="button_bar">
+    <button class="common_button" onclick="help('新建联系人');">帮助</button>
+    <button class="common_button" onclick="back();">返回</button>
+    <button class="common_button" onclick="addLinkman();">保存</button>
+</div>
+<table class="query_form_table">
+    <tr>
+        <th>姓名</th>
+        <td><input type="text" id="name"/><span class="red_star">*</span></td>
+        <th>性别</th>
+        <td>
+            <input type="radio" name="sex" value="1" checked/>男
+            <input type="radio" name="sex" value="2"/>女
+        </td>
+    </tr>
+    <tr>
+        <th>办公电话</th>
+        <td><input type="text" id="tel"/><span class="red_star">*</span></td>
+        <th>职位</th>
+        <td><input type="text" id="position"/>
+    </tr>
+    <tr>
+        <th>手机</th>
+        <td><input type="text" id="mobile"/></td>
+        <th>备注</th>
+        <td><input type="text" id="memo"/></td>
+    </tr>
+</table>
+</body>
+</html>
